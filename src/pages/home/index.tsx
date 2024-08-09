@@ -1,10 +1,13 @@
-import { Stack } from "@mui/material";
+import { Stack, Typography, useTheme } from "@mui/material";
 import CardCover from "../../components/cardCover";
 import CardMovies from "../../components/cardMovies";
+import LabeledBadge from "../../components/labeledBadge";
 
 // -------------------------------------------------------------
 
 export default function Home() {
+  const theme = useTheme();
+
   return (
     <Stack
       style={{
@@ -17,7 +20,9 @@ export default function Home() {
     >
       <CardCover />
 
-      <Stack style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      <Stack>
+        <LabeledBadge label="Destaques Também" />
+
         <CardMovies />
         <CardMovies />
         <CardMovies />

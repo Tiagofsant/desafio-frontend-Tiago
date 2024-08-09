@@ -3,8 +3,8 @@ import { Card, CardContent, CardMedia, styled } from "@mui/material";
 // --------------------------------------------------------------------------------------
 
 export const StyledCard = styled(Card)(() => ({
-  width: "600px",
-  height: "400px",
+  width: "380px",
+  height: "260px",
   position: "relative",
   borderRadius: "30px",
   overflow: "hidden",
