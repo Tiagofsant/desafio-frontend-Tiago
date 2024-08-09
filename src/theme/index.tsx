@@ -63,6 +63,7 @@ const theme = createTheme({
           fontSize: "20px",
           fontWeight: "600",
           backgroundColor: "rgba(60, 60, 60, 0.6)",
+          backdropFilter: "blur(10px)",
           color: "#fff",
           "&:hover": {
             backgroundColor: "rgba(60, 60, 60, 0.8)",

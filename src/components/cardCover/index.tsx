@@ -8,11 +8,7 @@ import {
 import Badge from "../badge";
 import Iconify from "../iconify";
 import SmallCircle from "../smallCircle";
-import {
-  StyledCard,
-  StyledCardContent,
-  StyledCardMedia
-} from "./styles";
+import { StyledCard, StyledCardContent, StyledCardMedia } from "./styles";
 
 // -----------------------------------------------------------------------------------
 
@@ -23,7 +19,18 @@ export default function CardCover() {
     <StyledCard>
       <StyledCardMedia>
         <StyledCardContent>
-          <Stack spacing={2}>
+          <Stack
+            id="content"
+            spacing={2}
+            style={{
+              width: "70%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              padding: "30px",
+              marginBottom: "30px",
+            }}
+          >
             <Badge />
 
             <Typography variant="h1" color={theme.palette.text.primary}>
@@ -42,26 +49,22 @@ export default function CardCover() {
               </Typography>
             </Stack>
 
-            <Typography
-              variant="body1"
-              color={theme.palette.text.secondary}
-              width="50%"
-            >
+            <Typography variant="body1" color={theme.palette.text.secondary}>
               Deadpool recebe uma oferta da Autoridade de Variância Temporal
               para se juntar ao Universo Cinematográfico Marvel, mas em vez
               disso recruta uma variante do Wolverine para salvar seu universo
               da extinção.
             </Typography>
-          </Stack>
 
-          <CardActionArea>
-            <Button
-              variant="contained"
-              endIcon={<Iconify icon="raphael:arrowright" width="40px" />}
-            >
-              Assistir ao trailer
-            </Button>
-          </CardActionArea>
+            <Stack display="inline-block">
+              <Button
+                variant="contained"
+                endIcon={<Iconify icon="raphael:arrowright" width="40px" />}
+              >
+                Assistir ao trailer
+              </Button>
+            </Stack>
+          </Stack>
         </StyledCardContent>
       </StyledCardMedia>
     </StyledCard>

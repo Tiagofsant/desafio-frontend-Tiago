@@ -3,7 +3,7 @@ import { Card, CardContent, CardMedia, styled } from "@mui/material";
 // --------------------------------------------------------------------------------------
 
 export const StyledCard = styled(Card)(() => ({
-  minWidth: "380px",
+  minWidth: "300px",
   height: "100%",
   position: "relative",
   borderRadius: "30px",
@@ -18,7 +18,7 @@ export const StyledCardMedia = styled(CardMedia)(() => ({
   width: "100%",
   height: "100%",
   zIndex: 1,
-  backgroundImage: `url(images/covers/divertidamente.png)`,
+  backgroundImage: `url(images/celebrities/zendaya.png)`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }));
@@ -31,5 +31,5 @@ export const StyledCardContent = styled(CardContent)(({ theme }) => ({
   position: "relative",
   zIndex: 2,
   color: theme.palette.primary.main,
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  backgroundColor: "rgba(0, 0, 0, 0.3)",
 }));
