@@ -1,8 +1,8 @@
-import { Card, CardMedia, Stack, styled } from "@mui/material";
+import { CardMedia, Stack, styled } from "@mui/material";
 import CardCover from "../../components/cardCover";
 import CardMovies from "../../components/cardMovies";
-import LabeledBadge from "../../components/labeledBadge";
 import CardPicture from "../../components/cardPicture";
+import LabeledBadge from "../../components/labeledBadge";
 
 // -------------------------------------------------------------
 
@@ -18,96 +18,79 @@ export const StyledCardMedias = styled(CardMedia)(() => ({
   backgroundPosition: "center",
 }));
 
+export const StyledContainer = styled(Stack)(() => ({
+  display: "flex",
+  flexDirection: "row",
+  gap: 10,
+  width: "100%",
+  height: "100vh",
+}));
+
+export const StyledContent = styled(Stack)(() => ({
+  display: "flex",
+  flexDirection: "row",
+  gap: 10,
+  width: "100%",
+  height: "280px",
+}));
+
 // -------------------------------------------------------------
 
 export default function Home() {
   return (
-    <>
-      <Stack
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: 10,
-          width: "100%",
-          height: "100vh",
-        }}
-      >
+    <Stack>
+      <StyledContainer>
         <CardCover />
 
         <Stack>
           <LabeledBadge label="Destaques Também" />
-
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
         </Stack>
-      </Stack>
+      </StyledContainer>
 
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge label="Ultimos Lançamentos" />
         </Stack>
-        <Stack
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 10,
-            width: "100%",
-            height: "280px",
-          }}
-        >
+        <StyledContent>
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
-        </Stack>
+        </StyledContent>
       </Stack>
 
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge label="Recomendandos" />
         </Stack>
-        <Stack
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 10,
-            width: "100%",
-            height: "280px",
-          }}
-        >
+        <StyledContent>
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
-        </Stack>
+        </StyledContent>
       </Stack>
 
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge label="Celebridades" />
         </Stack>
-        <Stack
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 10,
-            width: "100%",
-            height: "280px",
-          }}
-        >
+        <StyledContent>
           <CardPicture />
           <CardPicture />
           <CardPicture />
           <CardPicture />
           <CardPicture />
           <CardPicture />
-        </Stack>
+        </StyledContent>
       </Stack>
-    </>
+    </Stack>
   );
 }

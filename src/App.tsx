@@ -3,6 +3,7 @@ import Footer from "./layouts/footer";
 import Home from "./pages/home";
 import theme from "./theme";
 import Header from "./layouts/header";
+import AuthorPage from "./pages/authorPage";
 
 // -------------------------------------------------
 
@@ -11,7 +12,8 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Home />
+        {/* <Home /> */}
+        <AuthorPage />
         <Footer />
       </ThemeProvider>
     </>

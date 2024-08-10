@@ -1,7 +1,12 @@
 import { Button, Stack, Typography, useTheme } from "@mui/material";
 import Iconify from "../iconify";
 import ScoreBadge from "../scoreBadge";
-import { StyledCard, StyledCardContent, StyledCardMedia } from "./styles";
+import {
+  StyledCard,
+  StyledCardContent,
+  StyledCardMedia,
+  StyledContent,
+} from "./styles";
 
 // -----------------------------------------------------------------------------------
 
@@ -19,17 +24,7 @@ export default function CardMovies({ score }: Props) {
       <StyledCardMedia>
         <StyledCardContent>
           {score && <ScoreBadge />}
-          <Stack
-            id="content"
-            spacing={1}
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              justifyContent: "flex-end",
-              margin: "30px 0px",
-            }}
-          >
+          <StyledContent spacing={1}>
             <Typography variant="h4" color={theme.palette.text.primary}>
               Divertidamente 2
             </Typography>
@@ -42,7 +37,7 @@ export default function CardMovies({ score }: Props) {
                 Assistir ao trailer
               </Button>
             </Stack>
-          </Stack>
+          </StyledContent>
         </StyledCardContent>
       </StyledCardMedia>
     </StyledCard>

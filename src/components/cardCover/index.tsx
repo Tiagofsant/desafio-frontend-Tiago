@@ -1,14 +1,13 @@
-import {
-  Button,
-  CardActionArea,
-  Stack,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Button, Stack, Typography, useTheme } from "@mui/material";
 import Badge from "../badge";
 import Iconify from "../iconify";
 import SmallCircle from "../smallCircle";
-import { StyledCard, StyledCardContent, StyledCardMedia } from "./styles";
+import {
+  StyledCard,
+  StyledCardContent,
+  StyledCardMedia,
+  StyledContent,
+} from "./styles";
 
 // -----------------------------------------------------------------------------------
 
@@ -19,18 +18,7 @@ export default function CardCover() {
     <StyledCard>
       <StyledCardMedia>
         <StyledCardContent>
-          <Stack
-            id="content"
-            spacing={2}
-            style={{
-              width: "70%",
-              height: "100%",
-              display: "flex",
-              justifyContent: "flex-end",
-              padding: "30px",
-              marginBottom: "30px",
-            }}
-          >
+          <StyledContent spacing={2}>
             <Badge />
 
             <Typography variant="h1" color={theme.palette.text.primary}>
@@ -64,7 +52,7 @@ export default function CardCover() {
                 Assistir ao trailer
               </Button>
             </Stack>
-          </Stack>
+          </StyledContent>
         </StyledCardContent>
       </StyledCardMedia>
     </StyledCard>

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, styled } from "@mui/material";
+import { Card, CardContent, CardMedia, Stack, styled } from "@mui/material";
 
 // --------------------------------------------------------------------------------------
 
@@ -32,4 +32,11 @@ export const StyledCardContent = styled(CardContent)(({ theme }) => ({
   zIndex: 2,
   color: theme.palette.primary.main,
   backgroundColor: "rgba(0, 0, 0, 0.5)",
+}));
+
+export const StyledContent = styled(Stack)(() => ({
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  justifyContent: "flex-end",
 }));

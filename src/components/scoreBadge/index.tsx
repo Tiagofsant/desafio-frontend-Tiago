@@ -3,26 +3,32 @@ import Iconify from "../iconify";
 
 // ----------------------------------------------------------------
 
-export const StyledContent = styled(Stack)(() => ({
+interface Props {
+  noBadge?: boolean;
+}
+
+// ----------------------------------------------------------------
+
+export const StyledContent = styled(Stack)<Props>(({ noBadge }) => ({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "rgba(255, 255, 255, 0.2)",
-  backdropFilter: "blur(10px)",
-  borderRadius: "10px",
+  backgroundColor: noBadge ? undefined : "rgba(255, 255, 255, 0.2)",
+  backdropFilter: noBadge ? undefined : "blur(10px)",
+  borderRadius: noBadge ? undefined : "10px",
   width: "80px",
   gap: 10,
-  padding: 5,
+  padding: noBadge ? 0 : 5,
 }));
 
 // ----------------------------------------------------------------
 
-export default function ScoreBadge() {
+export default function ScoreBadge({ noBadge }: Props) {
   const theme = useTheme();
 
   return (
-    <StyledContent>
+    <StyledContent noBadge={noBadge}>
       <Iconify icon="noto:star" width="25px" />
       <Typography variant="h5" color={theme.palette.text.primary}>
         8.2

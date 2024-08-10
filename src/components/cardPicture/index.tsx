@@ -1,5 +1,10 @@
-import { Stack, Typography, useTheme } from "@mui/material";
-import { StyledCard, StyledCardContent, StyledCardMedia } from "./styles";
+import { Typography, useTheme } from "@mui/material";
+import {
+  StyledCard,
+  StyledCardContent,
+  StyledCardMedia,
+  StyledContent,
+} from "./styles";
 
 // -----------------------------------------------------------------------------------
 
@@ -10,21 +15,11 @@ export default function CardPicture() {
     <StyledCard>
       <StyledCardMedia>
         <StyledCardContent>
-          <Stack
-            id="content"
-            spacing={1}
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              justifyContent: "flex-end",
-              margin: "30px 0px",
-            }}
-          >
+          <StyledContent spacing={1}>
             <Typography variant="h4" color={theme.palette.text.primary}>
               Zendaya
             </Typography>
-          </Stack>
+          </StyledContent>
         </StyledCardContent>
       </StyledCardMedia>
     </StyledCard>

@@ -1,5 +1,7 @@
 import { Stack, useTheme } from "@mui/material";
 
+// ----------------------------------------------------------------
+
 export default function SmallCircle() {
   const theme = useTheme();
 
