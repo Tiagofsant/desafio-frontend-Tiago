@@ -43,7 +43,7 @@ export default function Home() {
         <CardCover />
 
         <Stack>
-          <LabeledBadge label="Destaques Também" />
+          <LabeledBadge title="Destaques Também" />
           <CardMovies score />
           <CardMovies score />
           <CardMovies score />
@@ -52,7 +52,7 @@ export default function Home() {
 
       <Stack marginTop={2}>
         <Stack>
-          <LabeledBadge label="Ultimos Lançamentos" />
+          <LabeledBadge title="Ultimos Lançamentos" />
         </Stack>
         <StyledContent>
           <CardMovies score />
@@ -66,7 +66,7 @@ export default function Home() {
 
       <Stack marginTop={2}>
         <Stack>
-          <LabeledBadge label="Recomendandos" />
+          <LabeledBadge title="Recomendandos" />
         </Stack>
         <StyledContent>
           <CardMovies score />
@@ -80,7 +80,7 @@ export default function Home() {
 
       <Stack marginTop={2}>
         <Stack>
-          <LabeledBadge label="Celebridades" />
+          <LabeledBadge title="Celebridades" />
         </Stack>
         <StyledContent>
           <CardPicture />

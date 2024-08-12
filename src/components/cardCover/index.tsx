@@ -1,5 +1,6 @@
-import { Button, Stack, Typography, useTheme } from "@mui/material";
+import { Stack, Typography, useTheme } from "@mui/material";
 import Badge from "../badge";
+import ButtonIcon from "../buttonIcon";
 import Iconify from "../iconify";
 import SmallCircle from "../smallCircle";
 import {
@@ -45,12 +46,7 @@ export default function CardCover() {
             </Typography>
 
             <Stack display="inline-block">
-              <Button
-                variant="contained"
-                endIcon={<Iconify icon="raphael:arrowright" width="40px" />}
-              >
-                Assistir ao trailer
-              </Button>
+              <ButtonIcon />
             </Stack>
           </StyledContent>
         </StyledCardContent>

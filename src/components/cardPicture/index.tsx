@@ -19,6 +19,10 @@ export default function CardPicture() {
             <Typography variant="h4" color={theme.palette.text.primary}>
               Zendaya
             </Typography>
+
+            <Typography variant="body1" color={theme.palette.text.disabled}>
+              Nome do Personagem
+            </Typography>
           </StyledContent>
         </StyledCardContent>
       </StyledCardMedia>

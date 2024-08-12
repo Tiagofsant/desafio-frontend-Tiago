@@ -1,5 +1,5 @@
-import { Button, Stack, Typography, useTheme } from "@mui/material";
-import Iconify from "../iconify";
+import { Stack, Typography, useTheme } from "@mui/material";
+import ButtonIcon from "../buttonIcon";
 import ScoreBadge from "../scoreBadge";
 import {
   StyledCard,
@@ -30,12 +30,7 @@ export default function CardMovies({ score }: Props) {
             </Typography>
 
             <Stack display="inline-block">
-              <Button
-                variant="contained"
-                endIcon={<Iconify icon="raphael:arrowright" width="40px" />}
-              >
-                Assistir ao trailer
-              </Button>
+              <ButtonIcon />
             </Stack>
           </StyledContent>
         </StyledCardContent>

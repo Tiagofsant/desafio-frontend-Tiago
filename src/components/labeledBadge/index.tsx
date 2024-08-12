@@ -3,11 +3,11 @@ import { Stack, styled, Typography, useTheme } from "@mui/material";
 // -------------------------------------------------------------
 
 export const StyledContainer = styled(Stack)(() => ({
-  width: "300px",
+  width: "100%",
   display: "flex",
   flexDirection: "row",
   gap: 10,
-  height: 40,
+  height: "100%",
   margin: 10,
 }));
 
@@ -16,32 +16,31 @@ export const StyledContent = styled(Stack)(({ theme }) => ({
   borderRadius: 10,
 }));
 
-export const StyledTypographyContainer = styled(Stack)(() => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: 10,
-}));
-
 // -------------------------------------------------------------
 
 interface Props {
-  label: string;
+  title: string;
+  subtitle?: string;
 }
 
 // -------------------------------------------------------------
 
-export default function LabeledBadge({ label }: Props) {
+export default function LabeledBadge({ title, subtitle }: Props) {
   const theme = useTheme();
 
   return (
     <StyledContainer>
       <StyledContent width={5} />
 
-      <StyledTypographyContainer>
+      <Stack style={{ display: "flex", flexWrap: "nowrap" }}>
         <Typography variant="h5" color={theme.palette.text.primary}>
-          {label}
+          {title}
         </Typography>
-      </StyledTypographyContainer>
+
+        <Typography variant="subtitle1" color={theme.palette.text.disabled}>
+          {subtitle}
+        </Typography>
+      </Stack>
     </StyledContainer>
   );
 }

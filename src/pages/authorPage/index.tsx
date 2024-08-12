@@ -26,7 +26,7 @@ export default function AuthorPage() {
   return (
     <StyledContainer>
       <StyledContent>
-        <LabeledBadge label="Filmes e Séries" />
+        <LabeledBadge title="Filmes e Séries" />
         <AuthorWorks />
       </StyledContent>
       <AuthorDescription />
