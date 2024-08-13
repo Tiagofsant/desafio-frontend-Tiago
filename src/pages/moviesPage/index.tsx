@@ -23,7 +23,7 @@ export default function MoviePage() {
   const colorDisabled = theme.palette.text.disabled;
 
   return (
-    <Stack padding={2} gap={2}>
+    <Stack gap={2}>
       <StyledCard>
         <StyledCardMedia>
           <StyledCardContent>

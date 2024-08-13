@@ -6,6 +6,7 @@ import Footer from "./layouts/footer";
 import Header from "./layouts/header";
 import Routes from "./routes";
 import theme from "./theme";
+import { Stack } from "@mui/material";
 
 // ---------------------------------------------------------------
 
@@ -15,7 +16,9 @@ function App() {
       <Router>
         <Header />
         <Suspense fallback={<LoadingScreen />}>
-          <Routes />
+          <Stack padding={4}>
+            <Routes />
+          </Stack>
         </Suspense>
         <Footer />
       </Router>

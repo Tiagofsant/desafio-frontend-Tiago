@@ -13,7 +13,7 @@ export default function Home() {
       <StyledContainer>
         <CardCover />
 
-        <Stack>
+        <Stack gap={2}>
           <LabeledBadge title="Destaques Também" />
           <CardMovies score />
           <CardMovies score />

@@ -3,10 +3,10 @@
   line-height: 1.5;
   font-weight: 400;
 
+  margin: 0;
+  box-sizing: border-box;
+
   color-scheme: light dark;
   color: "#fff";
   background-color: "#121212";
-
-  margin: 0;
-  box-sizing: border-box;
 }
