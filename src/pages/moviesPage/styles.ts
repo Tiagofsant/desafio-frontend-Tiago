@@ -2,15 +2,21 @@ import { Card, CardContent, CardMedia, Stack, styled } from "@mui/material";
 
 // --------------------------------------------------------------------------------------
 
+interface Props {
+  imageUrl: string;
+}
+
+// -------------------------------------------------------------------------------------
+
 export const StyledCard = styled(Card)(() => ({
   borderRadius: "30px",
   width: "100%",
   height: "500px",
 }));
 
-export const StyledCardMedia = styled(CardMedia)(() => ({
+export const StyledCardMedia = styled(CardMedia)<Props>(({ imageUrl }) => ({
   height: "100%",
-  backgroundImage: `url(/images/covers/deadpool.png)`,
+  backgroundImage: `url(${imageUrl})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }));

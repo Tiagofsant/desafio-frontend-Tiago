@@ -2,12 +2,11 @@ import { Card, CardMedia, Stack, styled } from "@mui/material";
 
 // --------------------------------------------------------------------------------------
 
-export const StyledContainer = styled(Stack)(() => ({
-  display: "flex",
-  flexDirection: "row",
-  gap: 10,
-  width: "320px",
-}));
+interface Props {
+  imageUrl: string;
+}
+
+// --------------------------------------------------------------------------------------
 
 export const StyledCard = styled(Card)(({ theme }) => ({
   width: "100px",
@@ -19,7 +18,7 @@ export const StyledCard = styled(Card)(({ theme }) => ({
   marginBottom: "30px",
 }));
 
-export const StyledCardMedia = styled(CardMedia)(() => ({
+export const StyledCardMedia = styled(CardMedia)<Props>(({ imageUrl }) => ({
   display: "flex",
   position: "absolute",
   top: 0,
@@ -27,7 +26,7 @@ export const StyledCardMedia = styled(CardMedia)(() => ({
   width: "100%",
   height: "100%",
   zIndex: 1,
-  backgroundImage: `url(images/covers/rivals.png)`,
+  backgroundImage: `url(${imageUrl})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }));

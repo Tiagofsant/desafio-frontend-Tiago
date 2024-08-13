@@ -2,17 +2,23 @@ import { Card, CardContent, CardMedia, Stack, styled } from "@mui/material";
 
 // --------------------------------------------------------------------------------------
 
+interface Props {
+  imageUrl: string;
+}
+
+// --------------------------------------------------------------------------------------
+
 export const StyledCard = styled(Card)(() => ({
   minWidth: "280px",
   position: "relative",
   borderRadius: "30px",
 }));
 
-export const StyledCardMedia = styled(CardMedia)(() => ({
+export const StyledCardMedia = styled(CardMedia)<Props>(({ imageUrl }) => ({
   width: "100%",
   height: "100%",
   display: "flex",
-  backgroundImage: `url(images/celebrities/zendaya.png)`,
+  backgroundImage: `url(${imageUrl})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }));

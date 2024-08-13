@@ -5,36 +5,42 @@ import {
   StyledCard,
   StyledCardContents,
   StyledCardMedia,
-  StyledContent
+  StyledContent,
 } from "./styles";
 
 // -----------------------------------------------------------------------------------
 
 interface Props {
-  score?: boolean;
+  content: {
+    score?: number | undefined;
+    title: string;
+    imageUrl: string;
+  }[];
 }
 
 // -----------------------------------------------------------------------------------
 
-export default function CardMovies({ score }: Props) {
+export default function CardMovies({ content }: Props) {
   const theme = useTheme();
 
   return (
     <StyledCard>
-      <StyledCardMedia>
-        <StyledCardContents>
-          {score && <ScoreBadge />}
-          <StyledContent spacing={1}>
-            <Typography variant="h4" color={theme.palette.text.primary}>
-              Divertidamente 2
-            </Typography>
+      {content.map((data) => (
+        <StyledCardMedia imageUrl={data.imageUrl}>
+          <StyledCardContents>
+            {data.score !== undefined && <ScoreBadge score={data.score} />}
+            <StyledContent spacing={1}>
+              <Typography variant="h4" color={theme.palette.text.primary}>
+                {data.title}
+              </Typography>
 
-            <Stack display="inline-block">
-              <ButtonIcon />
-            </Stack>
-          </StyledContent>
-        </StyledCardContents>
-      </StyledCardMedia>
+              <Stack display="inline-block">
+                <ButtonIcon />
+              </Stack>
+            </StyledContent>
+          </StyledCardContents>
+        </StyledCardMedia>
+      ))}
     </StyledCard>
   );
 }

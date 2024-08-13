@@ -2,6 +2,12 @@ import { Card, CardContent, CardMedia, Stack, styled } from "@mui/material";
 
 // --------------------------------------------------------------------------------------
 
+interface Props {
+  imageUrl: string;
+}
+
+// --------------------------------------------------------------------------------------
+
 export const StyledCard = styled(Card)(() => ({
   minWidth: "380px",
   height: "100%",
@@ -10,7 +16,7 @@ export const StyledCard = styled(Card)(() => ({
   overflow: "hidden",
 }));
 
-export const StyledCardMedia = styled(CardMedia)(() => ({
+export const StyledCardMedia = styled(CardMedia)<Props>(({ imageUrl }) => ({
   display: "flex",
   position: "absolute",
   top: 0,
@@ -18,7 +24,7 @@ export const StyledCardMedia = styled(CardMedia)(() => ({
   width: "100%",
   height: "100%",
   zIndex: 1,
-  backgroundImage: `url(images/covers/divertidamente.png)`,
+  backgroundImage: `url(${imageUrl})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }));

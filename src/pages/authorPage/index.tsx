@@ -5,6 +5,18 @@ import { StyledContainer, StyledContent } from "./styles";
 
 // ---------------------------------------------------------------------
 
+const authorContent = [
+  {
+    authorName: "Zendaya Coleman",
+    born: "1 de Setembro de 1996 (27 anos)",
+    origin: "Oakland, Califórnia, EUA",
+    about:
+      "É atriz e produtora, conhecida pelo seu trabalho em Homem-Aranha: De Volta ao Lar (2017), O Rei do Show (2017) e Malcolm & Marie (2021).",
+  },
+];
+
+// ---------------------------------------------------------------------
+
 export default function AuthorPage() {
   return (
     <StyledContainer>
@@ -12,7 +24,7 @@ export default function AuthorPage() {
         <LabeledBadge title="Filmes e Séries" />
         <AuthorWorks />
       </StyledContent>
-      <AuthorDescription />
+      <AuthorDescription content={authorContent} />
     </StyledContainer>
   );
 }

@@ -1,4 +1,4 @@
-import { Typography, useTheme } from "@mui/material";
+import { Stack, Typography, useTheme } from "@mui/material";
 import {
   StyledCard,
   StyledCardContent,
@@ -8,24 +8,36 @@ import {
 
 // -----------------------------------------------------------------------------------
 
-export default function CardPicture() {
+interface Props {
+  content: {
+    personName: string;
+    characterName?: string;
+    imageUrl: string;
+  }[];
+}
+
+// -----------------------------------------------------------------------------------
+
+export default function CardPicture({ content }: Props) {
   const theme = useTheme();
 
   return (
     <StyledCard>
-      <StyledCardMedia>
-        <StyledCardContent>
-          <StyledContent spacing={1}>
-            <Typography variant="h4" color={theme.palette.text.primary}>
-              Zendaya
-            </Typography>
+      {content.map((data) => (
+        <StyledCardMedia imageUrl={data.imageUrl}>
+          <StyledCardContent>
+            <StyledContent spacing={1}>
+              <Typography variant="h4" color={theme.palette.text.primary}>
+                {data.personName}
+              </Typography>
 
-            <Typography variant="body1" color={theme.palette.text.disabled}>
-              Nome do Personagem
-            </Typography>
-          </StyledContent>
-        </StyledCardContent>
-      </StyledCardMedia>
+              <Typography variant="body1" color={theme.palette.text.disabled}>
+                {data.characterName}
+              </Typography>
+            </StyledContent>
+          </StyledCardContent>
+        </StyledCardMedia>
+      ))}
     </StyledCard>
   );
 }
