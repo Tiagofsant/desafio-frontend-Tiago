@@ -1,23 +1,14 @@
-import { Stack, styled, useTheme } from "@mui/material";
-import MediaCard from "../mediaCard";
+import { StyledContentRow } from "../../global";
 import CustomDivider from "../customDivider";
+import MediaCard from "../cardMedia";
 
 // -----------------------------------------------------------
-
-export const StyledContainer = styled(Stack)(() => ({
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  gap: 30,
-}));
 
 // -----------------------------------------------------------
 
 export default function AuthorWorks() {
-  const theme = useTheme();
-
   return (
-    <StyledContainer>
+    <StyledContentRow flexWrap="wrap" gap={10}>
       <MediaCard />
       <MediaCard />
       <MediaCard />
@@ -32,6 +23,6 @@ export default function AuthorWorks() {
       <MediaCard />
 
       <CustomDivider />
-    </StyledContainer>
+    </StyledContentRow>
   );
 }

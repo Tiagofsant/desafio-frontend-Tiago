@@ -1,38 +1,9 @@
-import { CardMedia, Stack, styled } from "@mui/material";
+import { Stack } from "@mui/material";
 import CardCover from "../../components/cardCover";
 import CardMovies from "../../components/cardMovies";
 import CardPicture from "../../components/cardPicture";
 import LabeledBadge from "../../components/labeledBadge";
-
-// -------------------------------------------------------------
-
-export const StyledCardMedias = styled(CardMedia)(() => ({
-  display: "flex",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  zIndex: 1,
-  backgroundImage: `url(images/covers/divertidamente.png)`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-}));
-
-export const StyledContainer = styled(Stack)(() => ({
-  display: "flex",
-  flexDirection: "row",
-  gap: 10,
-  width: "100%",
-  height: "100vh",
-}));
-
-export const StyledContent = styled(Stack)(() => ({
-  display: "flex",
-  flexDirection: "row",
-  gap: 10,
-  width: "100%",
-  height: "280px",
-}));
+import { StyledContainer, StyledContent } from "./styles";
 
 // -------------------------------------------------------------
 

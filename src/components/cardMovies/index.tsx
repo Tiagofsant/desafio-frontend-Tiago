@@ -3,9 +3,9 @@ import ButtonIcon from "../buttonIcon";
 import ScoreBadge from "../scoreBadge";
 import {
   StyledCard,
-  StyledCardContent,
+  StyledCardContents,
   StyledCardMedia,
-  StyledContent,
+  StyledContent
 } from "./styles";
 
 // -----------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ export default function CardMovies({ score }: Props) {
   return (
     <StyledCard>
       <StyledCardMedia>
-        <StyledCardContent>
+        <StyledCardContents>
           {score && <ScoreBadge />}
           <StyledContent spacing={1}>
             <Typography variant="h4" color={theme.palette.text.primary}>
@@ -33,7 +33,7 @@ export default function CardMovies({ score }: Props) {
               <ButtonIcon />
             </Stack>
           </StyledContent>
-        </StyledCardContent>
+        </StyledCardContents>
       </StyledCardMedia>
     </StyledCard>
   );

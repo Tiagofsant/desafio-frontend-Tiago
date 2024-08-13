@@ -7,14 +7,12 @@ export default function SmallCircle() {
 
   return (
     <Stack
-      style={{
-        width: "8px",
-        height: "8px",
-        borderRadius: "50%",
-        backgroundColor: theme.palette.text.disabled,
-        display: "inline-block",
-        margin: "0px 2px",
-      }}
+      width="8px"
+      height="8px"
+      borderRadius="50%"
+      backgroundColor={theme.palette.text.disabled}
+      display="inline-block"
+      margin="0px 2px"
     />
   );
 }

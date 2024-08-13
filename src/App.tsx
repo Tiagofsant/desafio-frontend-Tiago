@@ -1,24 +1,25 @@
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+import { Suspense } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import LoadingScreen from "./components/LoadingScreen";
 import Footer from "./layouts/footer";
 import Header from "./layouts/header";
-import MoviePage from "./pages/moviesPage";
+import Routes from "./routes";
 import theme from "./theme";
-import AuthorPage from "./pages/authorPage";
-import Home from "./pages/homePage";
 
-// -------------------------------------------------
+// ---------------------------------------------------------------
 
 function App() {
   return (
-    <>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <Router>
         <Header />
-        {/* <Home /> */}
-        {/* <AuthorPage /> */}
-        <MoviePage />
+        <Suspense fallback={<LoadingScreen />}>
+          <Routes />
+        </Suspense>
         <Footer />
-      </ThemeProvider>
-    </>
+      </Router>
+    </ThemeProvider>
   );
 }
 

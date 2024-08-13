@@ -1,20 +1,5 @@
-import { Stack, styled, Typography, useTheme } from "@mui/material";
-
-// -------------------------------------------------------------
-
-export const StyledContainer = styled(Stack)(() => ({
-  width: "100%",
-  display: "flex",
-  flexDirection: "row",
-  gap: 10,
-  height: "100%",
-  margin: 10,
-}));
-
-export const StyledContent = styled(Stack)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
-  borderRadius: 10,
-}));
+import { Stack, Typography, useTheme } from "@mui/material";
+import { StyledContainer, StyledContent } from "./styles";
 
 // -------------------------------------------------------------
 
@@ -32,7 +17,7 @@ export default function LabeledBadge({ title, subtitle }: Props) {
     <StyledContainer>
       <StyledContent width={5} />
 
-      <Stack style={{ display: "flex", flexWrap: "nowrap" }}>
+      <Stack>
         <Typography variant="h5" color={theme.palette.text.primary}>
           {title}
         </Typography>

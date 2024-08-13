@@ -7,12 +7,10 @@ export default function CustomDivider() {
 
   return (
     <Stack
-      style={{
-        width: "100%",
-        height: "5px",
-        backgroundColor: theme.palette.background.paper,
-        borderRadius: "30px",
-      }}
+      width="100%"
+      height="5px"
+      bgcolor={theme.palette.background.paper}
+      borderRadius="30px"
     />
   );
 }
