@@ -22,22 +22,24 @@ export default function CardPicture({ content }: Props) {
   const theme = useTheme();
 
   return (
-    <StyledCard>
+    <>
       {content.map((data) => (
-        <StyledCardMedia imageUrl={data.imageUrl}>
-          <StyledCardContent>
-            <StyledContent spacing={1}>
-              <Typography variant="h4" color={theme.palette.text.primary}>
-                {data.personName}
-              </Typography>
+        <StyledCard>
+          <StyledCardMedia imageUrl={data.imageUrl}>
+            <StyledCardContent>
+              <StyledContent spacing={1}>
+                <Typography variant="h4" color={theme.palette.text.primary}>
+                  {data.personName}
+                </Typography>
 
-              <Typography variant="body1" color={theme.palette.text.disabled}>
-                {data.characterName}
-              </Typography>
-            </StyledContent>
-          </StyledCardContent>
-        </StyledCardMedia>
+                <Typography variant="body1" color={theme.palette.text.disabled}>
+                  {data.characterName}
+                </Typography>
+              </StyledContent>
+            </StyledCardContent>
+          </StyledCardMedia>
+        </StyledCard>
       ))}
-    </StyledCard>
+    </>
   );
 }

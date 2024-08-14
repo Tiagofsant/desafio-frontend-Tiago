@@ -1,72 +1,79 @@
 import { Stack } from "@mui/material";
-import CardCover from "../../components/cardCover";
+import { useCallback, useEffect, useState } from "react";
+import { getAllCelebrities, getAllMovies } from "../../api/services/requests";
 import CardMovies from "../../components/cardMovies";
 import CardPicture from "../../components/cardPicture";
 import LabeledBadge from "../../components/labeledBadge";
-import { StyledContainer, StyledContent } from "./styles";
-
-// -------------------------------------------------------------------
-
-const highlightsContent = [
-  {
-    score: 7.5,
-    title: "Planeta dos macacos",
-    imageUrl:
-      "https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q95/wp-content/uploads/2023/12/legiao_MVki2_XH54j7.jpg.webp",
-  },
-];
-
-const celebritiesContent = [
-  {
-    personName: "Tony Hanks",
-    imageUrl:
-      "https://cinema10.com.br/upload/personalidades/personalidades_2081_hanksyom.jpg",
-  },
-];
-
-const coverContent = [
-  {
-    title: "Veloses e Furiosos",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aspernatur quia ab nisi culpa, incidunt enim velit autem dolorem nulla numquam ipsum? Dolore harum fuga doloribus voluptas optio vitae at.",
-    score: 10,
-    imageUrl:
-      "https://itajaishopping.com.br/wp-content/uploads/2023/05/velozes-e-furiosos-10.jpg",
-  },
-];
+import { StyledContainerCover, StyledContent } from "./styles";
+import CardCover from "../../components/cardCover";
 
 // -------------------------------------------------------------------
 
 export default function Home() {
+  const [movies, setMovies] = useState<any>([]);
+  const [celebrities, setCelebrities] = useState<any>([]);
+
+  const PATH: string = "https://image.tmdb.org/t/p/";
+
+  const highlightsContent = movies.map((item: any) => ({
+    score: item.vote_average,
+    title: item.title,
+    imageUrl: `${PATH}w500/${item.backdrop_path}`,
+  }));
+
+  const celebritiesContent = celebrities.map((item: any) => ({
+    personName: item.name,
+    imageUrl: `${PATH}w500/${item.profile_path}`,
+  }));
+
+  const coverContent = {
+    title: movies[0]?.title || "",
+    description: movies[0]?.overview || "",
+    score: movies[0]?.score || 0,
+    imageUrl: `${PATH}w1280/${movies[0]?.backdrop_path || ""}`,
+  };
+
+  const getMovies = useCallback(async () => {
+    const result: any = await getAllMovies();
+
+    if (result) {
+      setMovies(result.results);
+    }
+  }, []);
+
+  const getCelebrities = useCallback(async () => {
+    const result: any = await getAllCelebrities();
+
+    if (result) {
+      setCelebrities(result.results);
+    }
+  }, []);
+
+  useEffect(() => {
+    getMovies();
+    getCelebrities();
+  }, [getMovies, getCelebrities]);
+
   return (
     <Stack>
-      <StyledContainer>
+      <StyledContainerCover>
         <CardCover content={coverContent} />
 
         <Stack gap={2}>
           <LabeledBadge title="Destaques Também" />
-          <CardMovies content={highlightsContent} />
+          <CardMovies content={highlightsContent.slice(1, 4)} />
         </Stack>
-      </StyledContainer>
-
-      <Stack marginTop={2}>
-        <Stack>
-          <LabeledBadge title="Ultimos Lançamentos" />
-        </Stack>
-        <StyledContent>
-          <CardMovies content={highlightsContent} />
-        </StyledContent>
-      </Stack>
-
+      </StyledContainerCover>
+      {/* ----------------------------------------------------- */}
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge title="Recomendandos" />
         </Stack>
         <StyledContent>
-          <CardMovies content={highlightsContent} />
+          <CardMovies content={highlightsContent.slice(4)} />
         </StyledContent>
       </Stack>
-
+      {/* ----------------------------------------------------- */}
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge title="Celebridades" />

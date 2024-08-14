@@ -3,7 +3,7 @@ import { Card, CardContent, CardMedia, Stack, styled } from "@mui/material";
 // ---------------------------------------------------------------------------
 
 interface Props {
-  imageUrl: string;
+  imageUrl?: string;
 }
 // ---------------------------------------------------------------------------
 

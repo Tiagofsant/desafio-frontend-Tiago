@@ -24,23 +24,25 @@ export default function CardMovies({ content }: Props) {
   const theme = useTheme();
 
   return (
-    <StyledCard>
+    <>
       {content.map((data) => (
-        <StyledCardMedia imageUrl={data.imageUrl}>
-          <StyledCardContents>
-            {data.score !== undefined && <ScoreBadge score={data.score} />}
-            <StyledContent spacing={1}>
-              <Typography variant="h4" color={theme.palette.text.primary}>
-                {data.title}
-              </Typography>
+        <StyledCard>
+          <StyledCardMedia imageUrl={data.imageUrl}>
+            <StyledCardContents>
+              {data.score !== undefined && <ScoreBadge score={data.score} />}
+              <StyledContent spacing={1}>
+                <Typography variant="h4" color={theme.palette.text.primary}>
+                  {data.title}
+                </Typography>
 
-              <Stack display="inline-block">
-                <ButtonIcon />
-              </Stack>
-            </StyledContent>
-          </StyledCardContents>
-        </StyledCardMedia>
+                <Stack display="inline-block">
+                  <ButtonIcon />
+                </Stack>
+              </StyledContent>
+            </StyledCardContents>
+          </StyledCardMedia>
+        </StyledCard>
       ))}
-    </StyledCard>
+    </>
   );
 }
