@@ -1,22 +1,28 @@
-import { useCallback, useEffect, useState } from "react";
-import {
-  getCelebritiesById,
-  getCelebritiesWorksByID,
-} from "../../api/services/requests";
 import AuthorDescription from "../../components/authorDescription";
 import CustomDivider from "../../components/customDivider";
 import LabeledBadge from "../../components/labeledBadge";
+import LoadingScreen from "../../components/LoadingScreen";
 import MediaCard from "../../components/mediaCard";
+import useCelebrity from "../../hooks/useCelebrity";
+import useCelebrityWorks from "../../hooks/useCelebrityWorks";
 import { PATH_IMAGE_API } from "../../routes/paths";
 import { StyledContainer, StyledContent } from "./styles";
 
 // ---------------------------------------------------------------------------------------
 
 export default function AuthorPage() {
-  const [authorData, setAuthorData] = useState<any>();
-  const [authorWorks, setAuthorWorks] = useState<any[]>([]);
+  const { celebrity, loading, error } = useCelebrity(64);
+  const { celebrityWorks } = useCelebrityWorks(64);
 
-  const authorWorksContent = authorWorks.map((item: any) => ({
+
+  // -------------------------- TRATAMENTO DE ERROS  ---------------------------
+
+  if (loading) return <LoadingScreen />;
+  if (error) return <div>ERRO AO CARREGAR A PAGINA</div>;
+
+  // -------------------------- CONTEÚDOS ---------------------------------------
+
+  const authorWorksContent = celebrityWorks.map((item: any) => ({
     title: item.title,
     score: item.vote_average,
     imageUrl: `${PATH_IMAGE_API.default}w185/${item.poster_path}`,
@@ -24,55 +30,25 @@ export default function AuthorPage() {
     year: "Desconhecido",
   }));
 
-  const getAuthorWorks = useCallback(async () => {
-    try {
-      const data: any = await getCelebritiesWorksByID(553535);
-
-      if (data) {
-        setAuthorWorks(data.cast);
-      }
-    } catch (error) {
-      return error;
-    }
-  }, []);
-
-  const getAuthorData = useCallback(async () => {
-    try {
-      const data: any = await getCelebritiesById(553535);
-
-      if (data) {
-        setAuthorData(data);
-      }
-    } catch (error) {
-      return error;
-    }
-  }, []);
-
-  useEffect(() => {
-    getAuthorData();
-  }, [getAuthorData]);
-
-  useEffect(() => {
-    getAuthorWorks();
-  }, [getAuthorWorks]);
+  // -------------------------- RETORNO -------------------------------------------
 
   return (
     <StyledContainer>
+      {/* ---------------------- SEÇÃO 1 -------------------------------- */}
       <StyledContent>
         <LabeledBadge title="Filmes e Séries" />
-
         <MediaCard content={authorWorksContent} />
-
         <CustomDivider />
       </StyledContent>
 
-      {authorData && (
+      {/* ---------------------- SEÇÃO 2 -------------------------------- */}
+      {celebrity && (
         <AuthorDescription
-          authorName={authorData.name}
-          born={authorData.birthday}
-          origin={authorData.place_of_birth}
-          about={authorData.biography}
-          imageUrl={`${PATH_IMAGE_API.default}w500/${authorData.profile_path}`}
+          authorName={celebrity.name}
+          born={celebrity.birthday}
+          origin={celebrity.place_of_birth}
+          about={celebrity.biography}
+          imageUrl={`${PATH_IMAGE_API.default}w500/${celebrity.profile_path}`}
         />
       )}
     </StyledContainer>

@@ -1,15 +1,15 @@
 import { Stack, Typography, useTheme } from "@mui/material";
+import { SmallCircle } from "../../global";
+import { CardCoverProps } from "../../types";
 import Badge from "../badge";
 import ButtonIcon from "../buttonIcon";
 import Score from "../score";
-import SmallCircle from "../smallCircle";
 import {
   StyledCard,
   StyledCardContent,
   StyledCardMedia,
   StyledContent,
 } from "./styles";
-import { CardCoverProps } from "../../types";
 
 // ------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ export default function CardCover({ content }: CardCoverProps) {
               {content.description}
             </Typography>
             <Stack display="inline-block">
-              <ButtonIcon movieId={553535} />
+              <ButtonIcon movieId={533535} />
             </Stack>
           </StyledContent>
         </StyledCardContent>

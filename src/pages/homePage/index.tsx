@@ -1,28 +1,31 @@
 import { Stack } from "@mui/material";
-import { useCallback, useEffect, useState } from "react";
-import {
-  getAllCelebrities,
-  getAllMovies,
-  getMoviesDetailsById,
-} from "../../api/services/requests";
 import CardCover from "../../components/cardCover";
 import CardMovies from "../../components/cardMovies";
 import CardPicture from "../../components/cardPicture";
 import LabeledBadge from "../../components/labeledBadge";
+import LoadingScreen from "../../components/LoadingScreen";
+import useCelebrites from "../../hooks/useAllCebelibries";
+import useMoviesDetais from "../../hooks/useMovieDetails";
+import useMovies from "../../hooks/useMovies";
 import { PATH_IMAGE_API } from "../../routes/paths";
 import { StyledContainerCover, StyledContent } from "./styles";
 
-// ---------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function HomePage() {
-  // -------------------------- STATES -----------------------------------------
-  const [movies, setMovies] = useState<any[]>([]);
-  const [celebrities, setCelebrities] = useState<any[]>([]);
-  const [genres, setGenres] = useState<any[]>([]);
+  const { movies, loading, error } = useMovies();
+  const { celebrities } = useCelebrites();
+  const { genres } = useMoviesDetais(533535);
 
-  // -------------------------- CONTENT -----------------------------------------
+  // -------------------------- TRATAMENTO DE ERROS  ---------------------------
+
+  if (loading) return <LoadingScreen />;
+  if (error) return <div>ERRO AO CARREGAR A PAGINA</div>;
+
+  // -------------------------- CONTEÚDOS ---------------------------------------
 
   const genresContent = genres.map((item: any) => ({
+    key: item.id,
     label: item.name,
   }));
 
@@ -54,68 +57,30 @@ export default function HomePage() {
       "",
   };
 
-  // -------------------------- CALLBACKS -----------------------------------------
-
-  const getMovies = useCallback(async () => {
-    try {
-      const data: any = await getAllMovies();
-      if (data && data.results) {
-        setMovies(data.results);
-      }
-    } catch (error) {
-      return error;
-    }
-  }, []);
-
-  const getCelebrities = useCallback(async () => {
-    try {
-      const result: any = await getAllCelebrities();
-      if (result && result.results) {
-        setCelebrities(result.results);
-      }
-    } catch (error) {
-      return error;
-    }
-  }, []);
-
-  const getMovieDetails = useCallback(async () => {
-    try {
-      const data: any = await getMoviesDetailsById(553535);
-      if (data) {
-        setGenres(data.genres);
-      }
-    } catch (error) {
-      return error;
-    }
-  }, []);
-
-  // -------------------------- EFFECTS -----------------------------------------
-
-  useEffect(() => {
-    getMovies();
-  }, [getMovies]);
-
-  useEffect(() => {
-    getCelebrities();
-  }, [getCelebrities]);
-
-  useEffect(() => {
-    getMovieDetails();
-  }, [getMovieDetails]);
-
-  // -------------------------- RETURN -----------------------------------------
+  // -------------------------- RETORNO -------------------------------------------
 
   return (
     <Stack>
+      {/* ---------------------- SEÇÃO 1 -------------------------------- */}
       <StyledContainerCover>
         <CardCover content={coverContent} />
-
         <Stack gap={2}>
           <LabeledBadge title="Destaques Também" />
           <CardMovies content={highlightsContent.slice(1, 4)} />
         </Stack>
       </StyledContainerCover>
-      {/* ----------------------------------------------------- */}
+
+      {/* ---------------------- SEÇÃO 3 -------------------------------- */}
+      <Stack marginTop={2}>
+        <Stack>
+          <LabeledBadge title="Ultimos Lançamentos" />
+        </Stack>
+        <StyledContent>
+          <CardMovies content={highlightsContent.slice(4)} />
+        </StyledContent>
+      </Stack>
+
+      {/* ---------------------- SEÇÃO 2 -------------------------------- */}
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge title="Recomendados" />
@@ -124,7 +89,8 @@ export default function HomePage() {
           <CardMovies content={highlightsContent.slice(4)} />
         </StyledContent>
       </Stack>
-      {/* ----------------------------------------------------- */}
+
+      {/* ---------------------- SEÇÃO 3 -------------------------------- */}
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge title="Celebridades" />

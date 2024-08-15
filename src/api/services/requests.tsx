@@ -66,7 +66,7 @@ export async function getMovieTrailerUrlById(id: number) {
   }
 }
 
-export async function getAllMoviesSimilar(id: number) {
+export async function getAllSimilarMovies(id: number) {
   const options = {
     method: "GET",
     url: `https://api.themoviedb.org/3/movie/${id}/similar`,

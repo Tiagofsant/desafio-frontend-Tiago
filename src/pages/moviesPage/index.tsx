@@ -1,17 +1,15 @@
 import { Stack } from "@mui/material";
-import { useCallback, useEffect, useState } from "react";
-import {
-  getAllMoviesSimilar,
-  getMovieCastById,
-  getMoviesDetailsById,
-} from "../../api/services/requests";
 import ButtonIcon from "../../components/buttonIcon";
 import CardMovies from "../../components/cardMovies";
 import CardPicture from "../../components/cardPicture";
 import ContentWrapper from "../../components/contentWrapper";
 import LabeledBadge from "../../components/labeledBadge";
+import LoadingScreen from "../../components/LoadingScreen";
 import MovieDetails from "../../components/movieDetails";
 import { StyledContentRow } from "../../global";
+import useCast from "../../hooks/useCast";
+import useMoviesDetais from "../../hooks/useMovieDetails";
+import useSimilarMovies from "../../hooks/useSimilarMovies";
 import { PATH_IMAGE_API } from "../../routes/paths";
 import {
   StyledCard,
@@ -23,18 +21,22 @@ import {
 // ---------------------------------------------------------------------------
 
 export default function MoviePage() {
-  const [moviesSimilar, setMoviesSimilar] = useState<any[]>([]);
-  const [movieDetails, setMovieDetails] = useState<any>();
-  const [genres, setGenres] = useState<any[]>([]);
-  const [cast, setCast] = useState<any[]>([]);
+  const { movieDetails, genres, loading, error } = useMoviesDetais(533535);
+  const { similarMovies } = useSimilarMovies(533535);
+  const { cast } = useCast(533535);
 
   const imageUrl = movieDetails?.backdrop_path
     ? `${PATH_IMAGE_API.default}w1280/${movieDetails.backdrop_path}`
     : "";
 
-  // ------------------------------- CONTENTS ------------------------------------
+  // ---------------------TRATAMENTO DE ERROS --------------------------------
 
-  const movieSimilarContent = moviesSimilar.map((item: any) => ({
+  if (loading) return <LoadingScreen />;
+  if (error) return <div>ERRO AO CARREGAR A PAGINA</div>;
+
+  // ------------------------------- CONTEÚDOS  ------------------------------
+
+  const similarMoviesContent = similarMovies.map((item: any) => ({
     score: item.vote_average,
     title: item.title,
     imageUrl: item.backdrop_path
@@ -54,60 +56,11 @@ export default function MoviePage() {
       : "",
   }));
 
-  // ------------------------------- CALLBACKS ------------------------------------
-
-  const getMoviesSimilar = useCallback(async () => {
-    try {
-      const data: any = await getAllMoviesSimilar(553535);
-      if (data) {
-        setMoviesSimilar(data.results);
-      }
-    } catch (error) {
-      return error;
-    }
-  }, []);
-
-  const getMovieDetails = useCallback(async () => {
-    try {
-      const data: any = await getMoviesDetailsById(553535);
-      if (data) {
-        setMovieDetails(data);
-        setGenres(data.genres);
-      }
-    } catch (error) {
-      return error;
-    }
-  }, []);
-
-  const getCast = useCallback(async () => {
-    try {
-      const data: any = await getMovieCastById(553535);
-      if (data) {
-        setCast(data.cast);
-      }
-    } catch (error) {
-      return error;
-    }
-  }, []);
-
-  // ------------------------------- EFFECTS ------------------------------------
-
-  useEffect(() => {
-    getMovieDetails();
-  }, [getMovieDetails]);
-
-  useEffect(() => {
-    getCast();
-  }, [getCast]);
-
-  useEffect(() => {
-    getMoviesSimilar();
-  }, [getMoviesSimilar]);
-
-  // ------------------------------- RETURNS ------------------------------------
+  // ------------------------------- RETORNOS --------------------------------
 
   return (
     <Stack gap={2}>
+      {/* ---------------------- SEÇÃO 1 -------------------------------- */}
       <StyledCard>
         <StyledCardMedia imageUrl={imageUrl}>
           <StyledCardContent>
@@ -120,6 +73,8 @@ export default function MoviePage() {
 
       <ContentWrapper content={genresContent} />
 
+      {/* ---------------------- SEÇÃO 2 -------------------------------- */}
+
       <MovieDetails
         title={movieDetails?.title || ""}
         description={movieDetails?.overview || ""}
@@ -129,15 +84,16 @@ export default function MoviePage() {
         artists={[]}
         voteCount={movieDetails?.vote_count || 0}
       />
-
+      {/* ---------------------- SEÇÃO 3 -------------------------------- */}
       <LabeledBadge title="Elenco principal" />
       <StyledContentRow height={280}>
         <CardPicture content={castContent} />
       </StyledContentRow>
 
+      {/* ---------------------- SEÇÃO 4 -------------------------------- */}
       <LabeledBadge title="Semelhantes" />
       <StyledContentRow height={280}>
-        <CardMovies content={movieSimilarContent} />
+        <CardMovies content={similarMoviesContent} />
       </StyledContentRow>
     </Stack>
   );

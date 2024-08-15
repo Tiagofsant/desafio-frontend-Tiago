@@ -27,7 +27,7 @@ export default function CardMovies({ content }: CardMoviesProps) {
                 </Typography>
 
                 <Stack display="inline-block">
-                  <ButtonIcon movieId={553535} />
+                  <ButtonIcon movieId={533535} />
                 </Stack>
               </StyledContent>
             </StyledCardContents>

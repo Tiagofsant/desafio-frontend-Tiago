@@ -1,4 +1,3 @@
-
 export interface imageProps {
   imageUrl: string;
 }
@@ -79,4 +78,37 @@ export interface ScoreProps {
 
 export interface ScoreBadgeProps extends ScoreProps {
   noBadge?: boolean;
+}
+
+export interface Movie {
+  id?: number;
+  title?: string;
+  backdrop_path?: string;
+  vote_average?: number;
+  vote_count?: number;
+  overview?: string;
+}
+
+export interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface MovieContent {
+  id: number;
+  title: string;
+  backdrop_path: string;
+  vote_average: number;
+  vote_count: number;
+  overview: string;
+  genres: Genre[];
+}
+
+export interface Celebrity {
+  id: number;
+  name: string;
+  birthday: string;
+  place_of_birth: string;
+  biography: string;
+  profile_path: string;
 }
