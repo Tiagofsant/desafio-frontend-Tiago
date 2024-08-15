@@ -26,7 +26,7 @@ export default function AuthorPage() {
 
   const getAuthorWorks = useCallback(async () => {
     try {
-      const data: any = await getCelebritiesWorksByID();
+      const data: any = await getCelebritiesWorksByID(553535);
 
       if (data) {
         setAuthorWorks(data.cast);
@@ -38,7 +38,7 @@ export default function AuthorPage() {
 
   const getAuthorData = useCallback(async () => {
     try {
-      const data: any = await getCelebritiesById();
+      const data: any = await getCelebritiesById(553535);
 
       if (data) {
         setAuthorData(data);

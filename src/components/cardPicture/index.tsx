@@ -5,20 +5,11 @@ import {
   StyledCardMedia,
   StyledContent,
 } from "./styles";
+import { CardPictureProps } from "../../types";
 
 // -----------------------------------------------------------------------------------
 
-interface Props {
-  content: {
-    personName: string;
-    characterName?: string;
-    imageUrl: string;
-  }[];
-}
-
-// -----------------------------------------------------------------------------------
-
-export default function CardPicture({ content }: Props) {
+export default function CardPicture({ content }: CardPictureProps) {
   const theme = useTheme();
 
   return (

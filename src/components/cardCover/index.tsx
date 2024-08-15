@@ -9,20 +9,11 @@ import {
   StyledCardMedia,
   StyledContent,
 } from "./styles";
+import { CardCoverProps } from "../../types";
 
-// Update Props to expect a single item
-interface Props {
-  content: {
-    title: string;
-    description: string;
-    score: number;
-    imageUrl: string;
-    voteCount: number;
-    genres: string | string[];
-  };
-}
+// ------------------------------------------------------------------
 
-export default function CardCover({ content }: Props) {
+export default function CardCover({ content }: CardCoverProps) {
   const theme = useTheme();
 
   return (
@@ -45,7 +36,7 @@ export default function CardCover({ content }: Props) {
               {content.description}
             </Typography>
             <Stack display="inline-block">
-              <ButtonIcon />
+              <ButtonIcon movieId={553535} />
             </Stack>
           </StyledContent>
         </StyledCardContent>

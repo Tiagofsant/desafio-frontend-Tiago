@@ -1,5 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
+// ESTRUTURA DESDE FONTE CRIADO COM CHAT GPT
+
 const theme = createTheme({
   palette: {
     primary: {

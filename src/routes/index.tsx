@@ -19,6 +19,7 @@ export default function Router() {
       path: PATH_PAGE.author,
       element: <Author />,
     },
+    // CRIAR A PAGINA 404
   ]);
 
   return routes;

@@ -1,24 +1,13 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import { StyledContentRow } from "../../global";
+import { MovieDetailsProps } from "../../types";
 import LabeledBadge from "../labeledBadge";
 import Score from "../score";
 import SmallCircle from "../smallCircle";
 
 // --------------------------------------------------------------------
 
-interface Props {
-  title: string;
-  description: string;
-  score: number;
-  director: string;
-  screenwriters: string[];
-  artists: string[];
-  voteCount: number;
-}
-
-// --------------------------------------------------------------------
-
-export default function movieDetails({
+export default function MovieDetails({
   title,
   description,
   score,
@@ -26,7 +15,7 @@ export default function movieDetails({
   screenwriters,
   artists,
   voteCount,
-}: Props) {
+}: MovieDetailsProps) {
   const theme = useTheme();
   const colorPrimary = theme.palette.text.primary;
   const colorSecondary = theme.palette.text.secondary;

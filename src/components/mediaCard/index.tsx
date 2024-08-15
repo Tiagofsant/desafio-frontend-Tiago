@@ -2,22 +2,11 @@ import { Stack, Typography, useTheme } from "@mui/material";
 import { StyledContentRow } from "../../global";
 import ScoreBadge from "../scoreBadge";
 import { StyledCard, StyledCardMedia } from "./styles";
+import { MediaCardProps } from "../../types";
 
 // ------------------------------------------------------------------
 
-interface Props {
-  content: {
-    imageUrl: string;
-    title: string;
-    score: number;
-    director: string;
-    year: number | string;
-  }[];
-}
-
-// ------------------------------------------------------------------
-
-export default function MediaCard({ content }: Props) {
+export default function MediaCard({ content }: MediaCardProps) {
   const theme = useTheme();
 
   return (

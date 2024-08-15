@@ -7,20 +7,11 @@ import {
   StyledCardMedia,
   StyledContent,
 } from "./styles";
+import { CardMoviesProps } from "../../types";
 
 // -----------------------------------------------------------------------------------
 
-interface Props {
-  content: {
-    score?: number | undefined;
-    title: string;
-    imageUrl: string;
-  }[];
-}
-
-// -----------------------------------------------------------------------------------
-
-export default function CardMovies({ content }: Props) {
+export default function CardMovies({ content }: CardMoviesProps) {
   const theme = useTheme();
 
   return (
@@ -36,7 +27,7 @@ export default function CardMovies({ content }: Props) {
                 </Typography>
 
                 <Stack display="inline-block">
-                  <ButtonIcon />
+                  <ButtonIcon movieId={553535} />
                 </Stack>
               </StyledContent>
             </StyledCardContents>

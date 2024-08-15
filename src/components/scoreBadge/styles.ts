@@ -1,14 +1,9 @@
 import { Stack, styled } from "@mui/material";
+import { ScoreBadgeProps } from "../../types";
 
 // -----------------------------------------------------------------------
 
-interface Props {
-  noBadge?: boolean;
-}
-
-// -----------------------------------------------------------------------
-
-export const StyledContent = styled(Stack)<Props>(({ noBadge }) => ({
+export const StyledContent = styled(Stack)<ScoreBadgeProps>(({ noBadge }) => ({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",

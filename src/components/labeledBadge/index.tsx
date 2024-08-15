@@ -1,16 +1,10 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import { StyledContainer, StyledContent } from "./styles";
+import { LabeledBadgeProps } from "../../types";
 
 // -------------------------------------------------------------
 
-interface Props {
-  title: string;
-  subtitle?: string | string[];
-}
-
-// -------------------------------------------------------------
-
-export default function LabeledBadge({ title, subtitle }: Props) {
+export default function LabeledBadge({ title, subtitle }: LabeledBadgeProps) {
   const theme = useTheme();
 
   return (

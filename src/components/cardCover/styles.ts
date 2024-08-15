@@ -3,8 +3,6 @@ import { imageProps } from "../../types";
 
 // ---------------------------------------------------------------------------
 
-// ---------------------------------------------------------------------------
-
 export const StyledCard = styled(Card)(() => ({
   position: "relative",
   borderRadius: "30px",

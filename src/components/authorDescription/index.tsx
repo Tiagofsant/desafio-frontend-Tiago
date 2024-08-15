@@ -1,15 +1,6 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import { StyledCard, StyledCardMedia, StyledContainer } from "./styles";
-
-// ---------------------------------------------------------------------
-
-interface Props {
-  authorName: string;
-  born: string;
-  origin: string;
-  about: string;
-  imageUrl: string;
-}
+import { AuthorDescriptionProps } from "../../types";
 
 // ---------------------------------------------------------------------
 
@@ -19,7 +10,7 @@ export default function AuthorDescription({
   origin,
   about,
   imageUrl,
-}: Props) {
+}: AuthorDescriptionProps) {
   const theme = useTheme();
 
   return (

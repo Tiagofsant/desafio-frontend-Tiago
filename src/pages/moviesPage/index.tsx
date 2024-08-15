@@ -58,7 +58,7 @@ export default function MoviePage() {
 
   const getMoviesSimilar = useCallback(async () => {
     try {
-      const data: any = await getAllMoviesSimilar();
+      const data: any = await getAllMoviesSimilar(553535);
       if (data) {
         setMoviesSimilar(data.results);
       }
@@ -69,7 +69,7 @@ export default function MoviePage() {
 
   const getMovieDetails = useCallback(async () => {
     try {
-      const data: any = await getMoviesDetailsById();
+      const data: any = await getMoviesDetailsById(553535);
       if (data) {
         setMovieDetails(data);
         setGenres(data.genres);
@@ -81,7 +81,7 @@ export default function MoviePage() {
 
   const getCast = useCallback(async () => {
     try {
-      const data: any = await getMovieCastById();
+      const data: any = await getMovieCastById(553535);
       if (data) {
         setCast(data.cast);
       }
@@ -112,7 +112,7 @@ export default function MoviePage() {
         <StyledCardMedia imageUrl={imageUrl}>
           <StyledCardContent>
             <StyledContent>
-              <ButtonIcon />
+              <ButtonIcon movieId={553535} />
             </StyledContent>
           </StyledCardContent>
         </StyledCardMedia>

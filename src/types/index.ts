@@ -1,3 +1,82 @@
+
 export interface imageProps {
   imageUrl: string;
+}
+
+export interface ButtonIconProps {
+  movieId: number;
+}
+
+export interface AuthorDescriptionProps {
+  authorName: string;
+  born: string;
+  origin: string;
+  about: string;
+  imageUrl: string;
+}
+
+export interface CardCoverProps {
+  content: {
+    title: string;
+    description: string;
+    score: number;
+    imageUrl: string;
+    voteCount: number;
+    genres: string | string[];
+  };
+}
+
+export interface CardMoviesProps {
+  content: {
+    score?: number | undefined;
+    title: string;
+    imageUrl: string;
+  }[];
+}
+
+export interface CardPictureProps {
+  content: {
+    personName: string;
+    characterName?: string;
+    imageUrl: string;
+  }[];
+}
+
+export interface ContentWrapperProps {
+  content: {
+    label: string;
+  }[];
+}
+
+export interface LabeledBadgeProps {
+  title: string;
+  subtitle?: string | string[];
+}
+
+export interface MediaCardProps {
+  content: {
+    imageUrl: string;
+    title: string;
+    score: number;
+    director: string;
+    year: number | string;
+  }[];
+}
+
+export interface MovieDetailsProps {
+  title: string;
+  description: string;
+  score: number;
+  director: string;
+  screenwriters: string[];
+  artists: string[];
+  voteCount: number;
+}
+
+export interface ScoreProps {
+  score?: number;
+}
+
+export interface ScoreBadgeProps extends ScoreProps {
+  noBadge?: boolean;
 }

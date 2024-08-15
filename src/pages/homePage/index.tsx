@@ -12,7 +12,7 @@ import LabeledBadge from "../../components/labeledBadge";
 import { PATH_IMAGE_API } from "../../routes/paths";
 import { StyledContainerCover, StyledContent } from "./styles";
 
-// -------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 
 export default function HomePage() {
   // -------------------------- STATES -----------------------------------------
@@ -80,7 +80,7 @@ export default function HomePage() {
 
   const getMovieDetails = useCallback(async () => {
     try {
-      const data: any = await getMoviesDetailsById();
+      const data: any = await getMoviesDetailsById(553535);
       if (data) {
         setGenres(data.genres);
       }

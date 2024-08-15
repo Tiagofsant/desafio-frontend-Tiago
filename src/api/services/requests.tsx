@@ -28,10 +28,10 @@ export async function getAllMovies() {
   }
 }
 
-export async function getMoviesDetailsById() {
+export async function getMoviesDetailsById(id: number) {
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/movie/533535",
+    url: `https://api.themoviedb.org/3/movie/${id}`,
     params: { language: "pt-BR" },
     headers: {
       accept: "application/json",
@@ -47,10 +47,10 @@ export async function getMoviesDetailsById() {
   }
 }
 
-export async function getMovieTrailerUrlById() {
+export async function getMovieTrailerUrlById(id: number) {
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/movie/533535/videos",
+    url: `https://api.themoviedb.org/3/movie/${id}/videos`,
     params: { language: "pt-BR" },
     headers: {
       accept: "application/json",
@@ -66,10 +66,10 @@ export async function getMovieTrailerUrlById() {
   }
 }
 
-export async function getAllMoviesSimilar() {
+export async function getAllMoviesSimilar(id: number) {
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/movie/533535/similar",
+    url: `https://api.themoviedb.org/3/movie/${id}/similar`,
     params: { language: "pt-BR", page: "1" },
     headers: {
       accept: "application/json",
@@ -85,10 +85,10 @@ export async function getAllMoviesSimilar() {
   }
 }
 
-export async function getMovieCastById() {
+export async function getMovieCastById(id: number) {
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/movie/533535/credits",
+    url: `https://api.themoviedb.org/3/movie/${id}/credits`,
     params: { language: "en-US" },
     headers: {
       accept: "application/json",
@@ -123,10 +123,10 @@ export async function getAllCelebrities() {
   }
 }
 
-export async function getCelebritiesById() {
+export async function getCelebritiesById(id: number) {
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/person/1245",
+    url: `https://api.themoviedb.org/3/person/${id}`,
     params: { language: "pt-BR" },
     headers: {
       accept: "application/json",
@@ -142,10 +142,10 @@ export async function getCelebritiesById() {
   }
 }
 
-export async function getCelebritiesWorksByID() {
+export async function getCelebritiesWorksByID(id: number) {
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/person/1245/movie_credits",
+    url: `https://api.themoviedb.org/3/person/${id}/movie_credits`,
     params: { language: "pt-BR" },
     headers: {
       accept: "application/json",

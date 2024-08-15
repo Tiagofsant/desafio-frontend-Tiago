@@ -1,33 +1,32 @@
 import { Button } from "@mui/material";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getMovieTrailerUrlById } from "../../api/services/requests";
 import Iconify from "../iconify";
+import { ButtonIconProps } from "../../types";
 
 // -----------------------------------------------------------
 
-export default function ButtonIcon() {
-  const [trailerkey, setTrailerkey] = useState("");
-  const trailerURL = `https://www.youtube.com/watch?v=${trailerkey}`;
+export default function ButtonIcon({ movieId }: ButtonIconProps) {
+  const [trailerKey, setTrailerKey] = useState("");
+  const trailerURL = `https://www.youtube.com/watch?v=${trailerKey}`;
 
-  const getTrailer = useCallback(async () => {
+  const getTrailer = async () => {
     try {
-      const result: any = await getMovieTrailerUrlById();
+      const result: any = await getMovieTrailerUrlById(movieId);
 
       if (result) {
-        setTrailerkey(result.results[0].key);
+        setTrailerKey(result.results[0].key);
         console.log("data MOVIES ", result.results[0].key);
       }
     } catch (error) {
+      alert("Trailer não encontrado.");
+      setTrailerKey("");
       return error;
     }
-  }, []);
+  };
 
-  useEffect(() => {
-    getTrailer();
-  }, [getTrailer]);
-
-  return (
+  return trailerKey !== "" ? (
     <Link
       to={trailerURL}
       target="_blank"
@@ -36,10 +35,19 @@ export default function ButtonIcon() {
     >
       <Button
         variant="contained"
+        onClick={getTrailer}
         endIcon={<Iconify icon="raphael:arrowright" width="40px" />}
       >
         Assistir ao trailer
       </Button>
     </Link>
+  ) : (
+    <Button
+      variant="contained"
+      onClick={getTrailer}
+      endIcon={<Iconify icon="raphael:arrowright" width="40px" />}
+    >
+      Assistir ao trailer
+    </Button>
   );
 }

@@ -1,11 +1,10 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import Iconify from "../iconify";
+import { ScoreProps } from "../../types";
 
-interface Props {
-  score: number;
-}
+// ------------------------------------------------------------------
 
-export default function Score({ score }: Props) {
+export default function Score({ score }: ScoreProps) {
   const theme = useTheme();
   const formattedScore = score.toFixed(1);
 

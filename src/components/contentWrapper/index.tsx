@@ -1,16 +1,10 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import { StyledContainer } from "./styles";
+import { ContentWrapperProps } from "../../types";
 
 // ------------------------------------------------------------------
 
-interface Props {
-  content: {
-    label: string;
-  }[];
-}
-// ------------------------------------------------------------------
-
-export default function ContentWrapper({ content }: Props) {
+export default function ContentWrapper({ content }: ContentWrapperProps) {
   const theme = useTheme();
 
   return (
