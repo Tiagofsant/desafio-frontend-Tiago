@@ -1,30 +1,80 @@
+import { useCallback, useEffect, useState } from "react";
+import {
+  getCelebritiesById,
+  getCelebritiesWorksByID,
+} from "../../api/services/requests";
 import AuthorDescription from "../../components/authorDescription";
-import AuthorWorks from "../../components/authorWorks";
+import CustomDivider from "../../components/customDivider";
 import LabeledBadge from "../../components/labeledBadge";
+import MediaCard from "../../components/mediaCard";
+import { PATH_IMAGE_API } from "../../routes/paths";
 import { StyledContainer, StyledContent } from "./styles";
 
-// ---------------------------------------------------------------------
-
-const authorContent = [
-  {
-    authorName: "Zendaya Coleman",
-    born: "1 de Setembro de 1996 (27 anos)",
-    origin: "Oakland, Califórnia, EUA",
-    about:
-      "É atriz e produtora, conhecida pelo seu trabalho em Homem-Aranha: De Volta ao Lar (2017), O Rei do Show (2017) e Malcolm & Marie (2021).",
-  },
-];
-
-// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 
 export default function AuthorPage() {
+  const [authorData, setAuthorData] = useState<any>();
+  const [authorWorks, setAuthorWorks] = useState<any[]>([]);
+
+  const authorWorksContent = authorWorks.map((item: any) => ({
+    title: item.title,
+    score: item.vote_average,
+    imageUrl: `${PATH_IMAGE_API.default}w185/${item.poster_path}`,
+    director: "Desconhecido",
+    year: "Desconhecido",
+  }));
+
+  const getAuthorWorks = useCallback(async () => {
+    try {
+      const data: any = await getCelebritiesWorksByID();
+
+      if (data) {
+        setAuthorWorks(data.cast);
+      }
+    } catch (error) {
+      return error;
+    }
+  }, []);
+
+  const getAuthorData = useCallback(async () => {
+    try {
+      const data: any = await getCelebritiesById();
+
+      if (data) {
+        setAuthorData(data);
+      }
+    } catch (error) {
+      return error;
+    }
+  }, []);
+
+  useEffect(() => {
+    getAuthorData();
+  }, [getAuthorData]);
+
+  useEffect(() => {
+    getAuthorWorks();
+  }, [getAuthorWorks]);
+
   return (
     <StyledContainer>
       <StyledContent>
         <LabeledBadge title="Filmes e Séries" />
-        <AuthorWorks />
+
+        <MediaCard content={authorWorksContent} />
+
+        <CustomDivider />
       </StyledContent>
-      <AuthorDescription content={authorContent} />
+
+      {authorData && (
+        <AuthorDescription
+          authorName={authorData.name}
+          born={authorData.birthday}
+          origin={authorData.place_of_birth}
+          about={authorData.biography}
+          imageUrl={`${PATH_IMAGE_API.default}w500/${authorData.profile_path}`}
+        />
+      )}
     </StyledContainer>
   );
 }

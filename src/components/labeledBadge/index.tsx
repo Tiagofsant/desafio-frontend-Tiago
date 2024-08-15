@@ -5,7 +5,7 @@ import { StyledContainer, StyledContent } from "./styles";
 
 interface Props {
   title: string;
-  subtitle?: string;
+  subtitle?: string | string[];
 }
 
 // -------------------------------------------------------------

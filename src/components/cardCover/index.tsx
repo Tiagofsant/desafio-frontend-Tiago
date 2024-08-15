@@ -1,7 +1,7 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import Badge from "../badge";
 import ButtonIcon from "../buttonIcon";
-import Iconify from "../iconify";
+import Score from "../score";
 import SmallCircle from "../smallCircle";
 import {
   StyledCard,
@@ -17,6 +17,8 @@ interface Props {
     description: string;
     score: number;
     imageUrl: string;
+    voteCount: number;
+    genres: string | string[];
   };
 }
 
@@ -33,13 +35,10 @@ export default function CardCover({ content }: Props) {
               {content.title}
             </Typography>
             <Stack direction="row" spacing={1} alignItems="center">
-              <Iconify icon="noto:star" />
-              <Typography variant="h5" color={theme.palette.text.primary}>
-                {content.score}
-              </Typography>
+              <Score score={content.score} />
               <Typography variant="body1" color={theme.palette.text.disabled}>
-                | 120 mil <SmallCircle /> 2h 8m <SmallCircle /> Comedy, Action,
-                Adventure, Superhero <SmallCircle /> 2024
+                | {content.voteCount} <SmallCircle /> 2h 8m <SmallCircle />{" "}
+                {content.genres} <SmallCircle /> 2024
               </Typography>
             </Stack>
             <Typography variant="body1" color={theme.palette.text.secondary}>

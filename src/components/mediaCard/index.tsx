@@ -10,9 +10,8 @@ interface Props {
     imageUrl: string;
     title: string;
     score: number;
-    author: string;
     director: string;
-    year: number;
+    year: number | string;
   }[];
 }
 
@@ -20,10 +19,11 @@ interface Props {
 
 export default function MediaCard({ content }: Props) {
   const theme = useTheme();
+
   return (
-    <Stack>
-      {content.map((data) => (
-        <StyledContentRow>
+    <Stack direction="row" flexWrap="wrap">
+      {content.map((data, index) => (
+        <StyledContentRow key={index} width="400px" m={1}>
           <StyledCard>
             <StyledCardMedia imageUrl={data.imageUrl} />
           </StyledCard>
