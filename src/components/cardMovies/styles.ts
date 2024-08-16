@@ -1,4 +1,11 @@
-import { Card, CardContent, CardMedia, Stack, styled } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Stack,
+  styled,
+  Typography,
+} from "@mui/material";
 import { imageProps } from "../../types";
 
 // --------------------------------------------------------------------------------------
@@ -70,4 +77,17 @@ export const StyledContent = styled(Stack)(() => ({
   justifyContent: "flex-end",
   position: "relative",
   zIndex: 2,
+}));
+
+export const StyledTypographyContainer = styled(Stack)(() => ({
+  width: "100%",
+  height: "100px",
+  alignSelf: "flex-end",
+  flexDirection: "column",
+  justifyContent: "flex-end",
+}));
+
+export const StyledTypography = styled(Typography)(() => ({
+  overflow: "hidden",
+  textOverflow: "ellipsis",
 }));

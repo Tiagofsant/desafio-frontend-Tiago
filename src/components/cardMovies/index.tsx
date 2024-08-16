@@ -6,6 +6,8 @@ import {
   StyledCardContents,
   StyledCardMedia,
   StyledContent,
+  StyledTypography,
+  StyledTypographyContainer,
 } from "./styles";
 import { CardMoviesProps } from "../../types";
 
@@ -22,9 +24,14 @@ export default function CardMovies({ content }: CardMoviesProps) {
             <StyledCardContents>
               {data.score !== undefined && <ScoreBadge score={data.score} />}
               <StyledContent spacing={1}>
-                <Typography variant="h4" color={theme.palette.text.primary}>
-                  {data.title}
-                </Typography>
+                <StyledTypographyContainer>
+                  <StyledTypography
+                    variant="h4"
+                    color={theme.palette.text.primary}
+                  >
+                    {data.title}
+                  </StyledTypography>
+                </StyledTypographyContainer>
 
                 <Stack display="inline-block">
                   <ButtonIcon movieId={533535} />

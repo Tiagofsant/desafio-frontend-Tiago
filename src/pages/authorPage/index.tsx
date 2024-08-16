@@ -14,7 +14,6 @@ export default function AuthorPage() {
   const { celebrity, loading, error } = useCelebrity(64);
   const { celebrityWorks } = useCelebrityWorks(64);
 
-
   // -------------------------- TRATAMENTO DE ERROS  ---------------------------
 
   if (loading) return <LoadingScreen />;
@@ -37,7 +36,7 @@ export default function AuthorPage() {
       {/* ---------------------- SEÇÃO 1 -------------------------------- */}
       <StyledContent>
         <LabeledBadge title="Filmes e Séries" />
-        <MediaCard content={authorWorksContent} />
+        <MediaCard content={authorWorksContent.slice(0, 18)} />
         <CustomDivider />
       </StyledContent>
 

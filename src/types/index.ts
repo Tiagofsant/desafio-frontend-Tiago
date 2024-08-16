@@ -27,7 +27,7 @@ export interface CardCoverProps {
 
 export interface CardMoviesProps {
   content: {
-    score?: number | undefined;
+    score?: number;
     title: string;
     imageUrl: string;
   }[];

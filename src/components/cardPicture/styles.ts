@@ -4,7 +4,9 @@ import { imageProps } from "../../types";
 // --------------------------------------------------------------------------------------
 
 export const StyledCard = styled(Card)(() => ({
+  width: "280px",
   minWidth: "280px",
+  height: "100%",
   position: "relative",
   borderRadius: "30px",
 }));

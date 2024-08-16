@@ -1,11 +1,11 @@
 import { Stack } from "@mui/material";
 import ButtonIcon from "../../components/buttonIcon";
-import CardMovies from "../../components/cardMovies";
-import CardPicture from "../../components/cardPicture";
 import ContentWrapper from "../../components/contentWrapper";
 import LabeledBadge from "../../components/labeledBadge";
 import LoadingScreen from "../../components/LoadingScreen";
 import MovieDetails from "../../components/movieDetails";
+import SwipperPicture from "../../components/swipper/swiperPicture";
+import SwipperMovie from "../../components/swipper/swipperMovie";
 import { StyledContentRow } from "../../global";
 import useCast from "../../hooks/useCast";
 import useMoviesDetais from "../../hooks/useMovieDetails";
@@ -79,21 +79,21 @@ export default function MoviePage() {
         title={movieDetails?.title || ""}
         description={movieDetails?.overview || ""}
         score={movieDetails?.vote_average || 0}
-        director={""}
-        screenwriters={[]}
-        artists={[]}
+        director="Desconhecido"
+        screenwriters={["Desconhecido"]}
+        artists={["Desconhecido"]}
         voteCount={movieDetails?.vote_count || 0}
       />
       {/* ---------------------- SEÇÃO 3 -------------------------------- */}
       <LabeledBadge title="Elenco principal" />
       <StyledContentRow height={280}>
-        <CardPicture content={castContent} />
+        <SwipperPicture items={castContent} />
       </StyledContentRow>
 
       {/* ---------------------- SEÇÃO 4 -------------------------------- */}
       <LabeledBadge title="Semelhantes" />
       <StyledContentRow height={280}>
-        <CardMovies content={similarMoviesContent} />
+        <SwipperMovie items={similarMoviesContent} />
       </StyledContentRow>
     </Stack>
   );

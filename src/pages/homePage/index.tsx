@@ -1,9 +1,10 @@
 import { Stack } from "@mui/material";
 import CardCover from "../../components/cardCover";
 import CardMovies from "../../components/cardMovies";
-import CardPicture from "../../components/cardPicture";
 import LabeledBadge from "../../components/labeledBadge";
 import LoadingScreen from "../../components/LoadingScreen";
+import SwipperPicture from "../../components/swipper/swiperPicture";
+import SwipperMovie from "../../components/swipper/swipperMovie";
 import useCelebrites from "../../hooks/useAllCebelibries";
 import useMoviesDetais from "../../hooks/useMovieDetails";
 import useMovies from "../../hooks/useMovies";
@@ -76,7 +77,7 @@ export default function HomePage() {
           <LabeledBadge title="Ultimos Lançamentos" />
         </Stack>
         <StyledContent>
-          <CardMovies content={highlightsContent.slice(4)} />
+          <SwipperMovie items={highlightsContent.slice(4)} />
         </StyledContent>
       </Stack>
 
@@ -86,7 +87,7 @@ export default function HomePage() {
           <LabeledBadge title="Recomendados" />
         </Stack>
         <StyledContent>
-          <CardMovies content={highlightsContent.slice(4)} />
+          <SwipperMovie items={highlightsContent.slice(4)} />
         </StyledContent>
       </Stack>
 
@@ -96,7 +97,7 @@ export default function HomePage() {
           <LabeledBadge title="Celebridades" />
         </Stack>
         <StyledContent>
-          <CardPicture content={celebritiesContent} />
+          <SwipperPicture items={celebritiesContent} />
         </StyledContent>
       </Stack>
     </Stack>

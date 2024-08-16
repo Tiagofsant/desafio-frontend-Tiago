@@ -7,10 +7,16 @@ import Header from "./layouts/header";
 import Routes from "./routes";
 import theme from "./theme";
 import { Stack } from "@mui/material";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { register } from "swiper/element/bundle";
 
 // ---------------------------------------------------------------
 
 function App() {
+  register();
   return (
     <ThemeProvider theme={theme}>
       <Router>
