@@ -3,11 +3,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getMovieTrailerUrlById } from "../../api/services/requests";
 import Iconify from "../iconify";
-import { ButtonIconProps } from "../../types";
 
 // -----------------------------------------------------------
 
-export default function ButtonIcon({ movieId }: ButtonIconProps) {
+export default function ButtonIcon() {
   const [trailerKey, setTrailerKey] = useState("");
   const trailerURL = `https://www.youtube.com/watch?v=${trailerKey}`;
 

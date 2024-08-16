@@ -3,7 +3,7 @@ import { getMovieCastById } from "../api/services/requests";
 
 // ----------------------------------------------------------
 
-const useCast = (id: number) => {
+const useCast = () => {
   const [cast, setCast] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

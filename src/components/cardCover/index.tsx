@@ -1,5 +1,4 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import { SmallCircle } from "../../global/styles";
 import { CardCoverProps } from "../../types";
 import Badge from "../badge";
 import ButtonIcon from "../buttonIcon";
@@ -10,6 +9,7 @@ import {
   StyledCardMedia,
   StyledContent,
 } from "./styles";
+import { SmallCircle } from "../../global/styles";
 
 // ------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ export default function CardCover({ content }: CardCoverProps) {
               {content.description}
             </Typography>
             <Stack display="inline-block">
-              <ButtonIcon movieId={533535} />
+              <ButtonIcon />
             </Stack>
           </StyledContent>
         </StyledCardContent>

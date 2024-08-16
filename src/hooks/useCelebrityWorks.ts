@@ -14,7 +14,7 @@ const useCelebrityWorks = (id: number) => {
     setError(null);
 
     try {
-      const data: any = await getCelebritiesWorksByID(64);
+      const data: any = await getCelebritiesWorksByID(id);
       if (data) {
         setCelebrityWorks(data.cast);
       }

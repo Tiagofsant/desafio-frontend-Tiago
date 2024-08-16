@@ -14,10 +14,9 @@ const useCelebrity = (id: number) => {
     setError(null);
 
     try {
-      const data: any = await getCelebritiesById(64);
+      const data: any = await getCelebritiesById(id);
       if (data) {
         setCelebrity(data);
-        console.log("ddsdsdc ", data);
       }
     } catch (err) {
       setError("Falha em carregar as informações");
@@ -28,7 +27,6 @@ const useCelebrity = (id: number) => {
 
   useEffect(() => {
     getCelebrity();
-    console.log("dsvdsv ", celebrity);
   }, [getCelebrity]);
 
   return { celebrity, loading, error, refetch: getCelebrity };

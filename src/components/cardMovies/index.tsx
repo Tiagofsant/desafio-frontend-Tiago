@@ -34,7 +34,7 @@ export default function CardMovies({ content }: CardMoviesProps) {
                 </StyledTypographyContainer>
 
                 <Stack display="inline-block">
-                  <ButtonIcon movieId={533535} />
+                  <ButtonIcon />
                 </Stack>
               </StyledContent>
             </StyledCardContents>

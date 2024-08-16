@@ -22,8 +22,8 @@ import {
 
 export default function MoviePage() {
   const { movieDetails, genres, loading, error } = useMoviesDetais(533535);
-  const { similarMovies } = useSimilarMovies(533535);
-  const { cast } = useCast(533535);
+  const { similarMovies } = useSimilarMovies();
+  const { cast } = useCast();
 
   const imageUrl = movieDetails?.backdrop_path
     ? `${PATH_IMAGE_API.default}w1280/${movieDetails.backdrop_path}`
@@ -65,7 +65,7 @@ export default function MoviePage() {
         <StyledCardMedia imageUrl={imageUrl}>
           <StyledCardContent>
             <StyledContent>
-              <ButtonIcon movieId={553535} />
+              <ButtonIcon />
             </StyledContent>
           </StyledCardContent>
         </StyledCardMedia>
