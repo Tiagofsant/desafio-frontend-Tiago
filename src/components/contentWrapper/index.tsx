@@ -1,6 +1,6 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import { StyledContainer } from "./styles";
 import { ContentWrapperProps } from "../../types";
+import { StyledContainer } from "./styles";
 
 // ------------------------------------------------------------------
 

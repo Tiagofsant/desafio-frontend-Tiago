@@ -1,5 +1,5 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import { SmallCircle } from "../../global";
+import { SmallCircle } from "../../global/styles";
 import { CardCoverProps } from "../../types";
 import Badge from "../badge";
 import ButtonIcon from "../buttonIcon";

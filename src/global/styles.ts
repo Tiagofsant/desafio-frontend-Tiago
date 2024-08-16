@@ -16,3 +16,11 @@ export const SmallCircle = styled(Stack)(({ theme }) => ({
   display: "inline-block",
   margin: "0 2px",
 }));
+
+export const Animate = styled(Stack)(() => ({
+  transformOrigin: "50% 50%",
+  transition: "transform 0.3s ease-in-out",
+  "&:hover": {
+    transform: "scale(1.1)",
+  },
+}));

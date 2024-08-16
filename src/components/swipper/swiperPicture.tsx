@@ -38,6 +38,8 @@ export default function SwipperPicture({ items }: SwipperMovieProps) {
     };
   }, []);
 
+  //  ESTRUTURA CRIADA ABAIXO COM O AUXILIO DE CHAT GPT
+
   return (
     <Swiper
       spaceBetween={10}

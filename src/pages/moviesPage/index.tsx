@@ -6,7 +6,7 @@ import LoadingScreen from "../../components/LoadingScreen";
 import MovieDetails from "../../components/movieDetails";
 import SwipperPicture from "../../components/swipper/swiperPicture";
 import SwipperMovie from "../../components/swipper/swipperMovie";
-import { StyledContentRow } from "../../global";
+import { StyledContentRow } from "../../global/styles";
 import useCast from "../../hooks/useCast";
 import useMoviesDetais from "../../hooks/useMovieDetails";
 import useSimilarMovies from "../../hooks/useSimilarMovies";

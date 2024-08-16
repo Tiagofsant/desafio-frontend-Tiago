@@ -81,13 +81,19 @@ export const StyledContent = styled(Stack)(() => ({
 
 export const StyledTypographyContainer = styled(Stack)(() => ({
   width: "100%",
-  height: "100px",
+  height: "100%",
+  minHeight: "100%",
   alignSelf: "flex-end",
   flexDirection: "column",
   justifyContent: "flex-end",
 }));
 
+// ESTILIZAÇÃO FEITA POR CHAT GPT
 export const StyledTypography = styled(Typography)(() => ({
+  display: "-webkit-box",
+  WebkitBoxOrient: "vertical",
   overflow: "hidden",
   textOverflow: "ellipsis",
+  WebkitLineClamp: 3,
+  lineClamp: 3,
 }));

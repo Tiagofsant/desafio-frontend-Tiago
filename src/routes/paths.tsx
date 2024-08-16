@@ -1,7 +1,7 @@
 export const PATH_PAGE = {
   home: "/",
   movies: "/movies",
-  author: "/author",
+  actor: "/actor",
   notfound: "404",
 };
 

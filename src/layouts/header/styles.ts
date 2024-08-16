@@ -8,6 +8,6 @@ export const StyledContainer = styled(Stack)(() => ({
   display: "flex",
   flexDirection: "row",
   alignContent: "center",
-  justifyContent: "center",
+  justifyContent: "space-between",
   overflow: "hidden",
 }));

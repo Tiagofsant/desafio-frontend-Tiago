@@ -13,11 +13,10 @@ export default function ButtonIcon({ movieId }: ButtonIconProps) {
 
   const getTrailer = async () => {
     try {
-      const result: any = await getMovieTrailerUrlById(movieId);
+      const result: any = await getMovieTrailerUrlById(0);
 
       if (result) {
         setTrailerKey(result.results[0].key);
-        console.log("data MOVIES ", result.results[0].key);
       }
     } catch (error) {
       alert("Trailer não encontrado.");

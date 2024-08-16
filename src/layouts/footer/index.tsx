@@ -1,6 +1,7 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import Iconify from "../../components/iconify";
+import { Animate } from "../../global/styles";
 import { PATH_SOCIAL } from "../../routes/paths";
 
 // --------------------------------------------------------------------
@@ -28,12 +29,17 @@ export default function Footer() {
       </Typography>
 
       <Stack direction="row" spacing={2} justifyContent="center" mt={2}>
-        <Link to={PATH_SOCIAL.whatsapp} target="_blank">
-          <Iconify icon="logos:whatsapp-icon" />
-        </Link>
-        <Link to={PATH_SOCIAL.linkedin} target="_blank">
-          <Iconify icon="skill-icons:linkedin" />
-        </Link>
+        <Animate>
+          <Link to={PATH_SOCIAL.whatsapp} target="_blank">
+            <Iconify icon="logos:whatsapp-icon" />
+          </Link>
+        </Animate>
+
+        <Animate>
+          <Link to={PATH_SOCIAL.linkedin} target="_blank">
+            <Iconify icon="skill-icons:linkedin" />
+          </Link>
+        </Animate>
       </Stack>
     </Stack>
   );

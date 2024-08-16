@@ -1,15 +1,25 @@
-import { Stack } from "@mui/material";
+import { Button } from "@mui/material";
 import Logo from "../../components/logo";
-import { StyledContainer } from "./styles";
+import { StyledContentRow } from "../../global/styles";
+import { PATH_PAGE } from "../../routes/paths";
 
 // ---------------------------------------------------------
 
 export default function Header() {
   return (
-    <StyledContainer>
-      <Stack>
-        <Logo />
-      </Stack>
-    </StyledContainer>
+    <StyledContentRow margin={2} justifyContent="space-between">
+      <Logo />
+      <StyledContentRow>
+        <Button variant="contained" href={PATH_PAGE.home}>
+          Home
+        </Button>
+        <Button variant="contained" href={PATH_PAGE.actor}>
+          Página do Ator
+        </Button>
+        <Button variant="contained" href={PATH_PAGE.movies}>
+          Página de Filmes
+        </Button>
+      </StyledContentRow>
+    </StyledContentRow>
   );
 }

@@ -1,8 +1,8 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import { StyledContentRow } from "../../global";
+import { StyledContentRow } from "../../global/styles";
+import { MediaCardProps } from "../../types";
 import ScoreBadge from "../scoreBadge";
 import { StyledCard, StyledCardMedia } from "./styles";
-import { MediaCardProps } from "../../types";
 
 // ------------------------------------------------------------------
 

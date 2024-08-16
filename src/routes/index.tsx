@@ -1,5 +1,5 @@
 import { useRoutes } from "react-router-dom";
-import { Author, Home, Movies } from "./elements";
+import { Actor, Home, Movies } from "./elements";
 import { PATH_PAGE } from "./paths";
 
 // --------------------------------------------------------------
@@ -16,8 +16,8 @@ export default function Router() {
       element: <Movies />,
     },
     {
-      path: PATH_PAGE.author,
-      element: <Author />,
+      path: PATH_PAGE.actor,
+      element: <Actor />,
     },
     // CRIAR A PAGINA 404
   ]);

@@ -1,11 +1,11 @@
-import { Stack, Typography, useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
+import { CardPictureProps } from "../../types";
 import {
   StyledCard,
   StyledCardContent,
   StyledCardMedia,
   StyledContent,
 } from "./styles";
-import { CardPictureProps } from "../../types";
 
 // -----------------------------------------------------------------------------------
 

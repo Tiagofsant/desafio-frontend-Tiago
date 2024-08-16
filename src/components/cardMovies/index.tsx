@@ -1,4 +1,5 @@
-import { Stack, Typography, useTheme } from "@mui/material";
+import { Stack, useTheme } from "@mui/material";
+import { CardMoviesProps } from "../../types";
 import ButtonIcon from "../buttonIcon";
 import ScoreBadge from "../scoreBadge";
 import {
@@ -9,7 +10,6 @@ import {
   StyledTypography,
   StyledTypographyContainer,
 } from "./styles";
-import { CardMoviesProps } from "../../types";
 
 // -----------------------------------------------------------------------------------
 

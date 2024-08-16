@@ -10,7 +10,7 @@ import { StyledContainer, StyledContent } from "./styles";
 
 // ---------------------------------------------------------------------------------------
 
-export default function AuthorPage() {
+export default function ActorPage() {
   const { celebrity, loading, error } = useCelebrity(64);
   const { celebrityWorks } = useCelebrityWorks(64);
 

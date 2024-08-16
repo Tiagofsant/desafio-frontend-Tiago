@@ -1,5 +1,5 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import { SmallCircle, StyledContentRow } from "../../global";
+import { SmallCircle, StyledContentRow } from "../../global/styles";
 import { MovieDetailsProps } from "../../types";
 import LabeledBadge from "../labeledBadge";
 import Score from "../score";
