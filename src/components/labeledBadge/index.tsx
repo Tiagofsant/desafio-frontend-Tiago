@@ -1,4 +1,5 @@
 import { Stack, Typography, useTheme } from "@mui/material";
+import React from "react";
 import { LabeledBadgeProps } from "../../types";
 import { StyledContainer, StyledContent } from "./styles";
 

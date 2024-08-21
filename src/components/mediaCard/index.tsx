@@ -1,4 +1,5 @@
 import { Stack, Typography, useTheme } from "@mui/material";
+import React from "react";
 import { StyledContentRow } from "../../global/styles";
 import { MediaCardProps } from "../../types";
 import ScoreBadge from "../scoreBadge";

@@ -1,6 +1,7 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import { StyledCard, StyledCardMedia, StyledContainer } from "./styles";
+import React from "react";
 import { AuthorDescriptionProps } from "../../types";
+import { StyledCard, StyledCardMedia, StyledContainer } from "./styles";
 
 // ---------------------------------------------------------------------
 

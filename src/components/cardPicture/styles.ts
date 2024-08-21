@@ -28,7 +28,7 @@ export const StyledCardContent = styled(CardContent)(({ theme }) => ({
   position: "relative",
   padding: 0,
   color: theme.palette.primary.main,
-  backgroundColor: "rgba(0, 0, 0, 0.3)",
+  backgroundColor: "rgba(0, 0, 0, 0.2)",
 
   "&::before": {
     content: '""',

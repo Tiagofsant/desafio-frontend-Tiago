@@ -1,3 +1,4 @@
+import React from "react";
 import AuthorDescription from "../../components/authorDescription";
 import CustomDivider from "../../components/customDivider";
 import LabeledBadge from "../../components/labeledBadge";

@@ -21,7 +21,6 @@ export const StyledCardMedia = styled(CardMedia)<imageProps>(
 export const StyledCardContent = styled(CardContent)(({ theme }) => ({
   height: "100%",
   color: theme.palette.primary.main,
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
 }));
 
 export const StyledContent = styled(Stack)(() => ({

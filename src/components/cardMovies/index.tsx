@@ -1,4 +1,5 @@
 import { Stack, useTheme } from "@mui/material";
+import React from "react";
 import { CardMoviesProps } from "../../types";
 import ButtonIcon from "../buttonIcon";
 import ScoreBadge from "../scoreBadge";

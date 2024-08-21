@@ -1,4 +1,5 @@
 import { Stack, Typography, useTheme } from "@mui/material";
+import React from "react";
 import { ContentWrapperProps } from "../../types";
 import { StyledContainer } from "./styles";
 

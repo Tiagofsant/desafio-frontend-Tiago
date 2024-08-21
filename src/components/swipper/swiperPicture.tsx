@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { SwipperPictureProps } from "../../types";
 import CardPicture from "../cardPicture";
 
 // ------------------------------------------------------------------------------------
 
-interface CardPicture {
-  personName: string;
-  characterName?: string;
-  imageUrl: string;
-}
-
-interface SwipperMovieProps {
-  items: CardPicture[];
-}
-
-// ------------------------------------------------------------------------------------
-
-export default function SwipperPicture({ items }: SwipperMovieProps) {
+export default function SwipperPicture({ itemsPic }: SwipperPictureProps) {
   const [slidesPerView, setSlidesPerView] = useState<number>(6);
 
   useEffect(() => {
@@ -47,7 +36,7 @@ export default function SwipperPicture({ items }: SwipperMovieProps) {
       slidesPerView={slidesPerView}
       navigation
     >
-      {items.map((item, index) => (
+      {itemsPic.map((item, index) => (
         <SwiperSlide key={index}>
           <CardPicture content={[item]} />
         </SwiperSlide>

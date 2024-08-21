@@ -1,4 +1,5 @@
 import { Typography, useTheme } from "@mui/material";
+import React from "react";
 import { CardPictureProps } from "../../types";
 import {
   StyledCard,

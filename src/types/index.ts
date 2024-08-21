@@ -112,3 +112,23 @@ export interface Celebrity {
   biography: string;
   profile_path: string;
 }
+
+export interface CardPictureSwipper {
+  personName: string;
+  characterName?: string;
+  imageUrl: string;
+}
+
+export interface SwipperPictureProps {
+  itemsPic: CardPictureSwipper[];
+}
+
+export interface CardMovieSwipper {
+  score: number;
+  title: string;
+  imageUrl: string;
+}
+
+export interface SwipperMovieProps {
+  itemsMov: CardMovieSwipper[];
+}

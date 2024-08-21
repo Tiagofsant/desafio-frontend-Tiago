@@ -1,4 +1,5 @@
 import { Stack } from "@mui/material";
+import React from "react";
 import CardCover from "../../components/cardCover";
 import CardMovies from "../../components/cardMovies";
 import LabeledBadge from "../../components/labeledBadge";
@@ -77,7 +78,7 @@ export default function HomePage() {
           <LabeledBadge title="Ultimos Lançamentos" />
         </Stack>
         <StyledContent>
-          <SwipperMovie items={highlightsContent.slice(4)} />
+          <SwipperMovie itemsMov={highlightsContent.slice(4)} />
         </StyledContent>
       </Stack>
 
@@ -87,7 +88,7 @@ export default function HomePage() {
           <LabeledBadge title="Recomendados" />
         </Stack>
         <StyledContent>
-          <SwipperMovie items={highlightsContent.slice(4)} />
+          <SwipperMovie itemsMov={highlightsContent.slice(4)} />
         </StyledContent>
       </Stack>
 
@@ -97,7 +98,7 @@ export default function HomePage() {
           <LabeledBadge title="Celebridades" />
         </Stack>
         <StyledContent>
-          <SwipperPicture items={celebritiesContent} />
+          <SwipperPicture itemsPic={celebritiesContent} />
         </StyledContent>
       </Stack>
     </Stack>

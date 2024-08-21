@@ -1,4 +1,5 @@
 import { Stack } from "@mui/material";
+import React from "react";
 import ButtonIcon from "../../components/buttonIcon";
 import ContentWrapper from "../../components/contentWrapper";
 import LabeledBadge from "../../components/labeledBadge";
@@ -87,13 +88,13 @@ export default function MoviePage() {
       {/* ---------------------- SEÇÃO 3 -------------------------------- */}
       <LabeledBadge title="Elenco principal" />
       <StyledContentRow height={280}>
-        <SwipperPicture items={castContent} />
+        <SwipperPicture itemsPic={castContent} />
       </StyledContentRow>
 
       {/* ---------------------- SEÇÃO 4 -------------------------------- */}
       <LabeledBadge title="Semelhantes" />
       <StyledContentRow height={280}>
-        <SwipperMovie items={similarMoviesContent} />
+        <SwipperMovie itemsMov={similarMoviesContent} />
       </StyledContentRow>
     </Stack>
   );

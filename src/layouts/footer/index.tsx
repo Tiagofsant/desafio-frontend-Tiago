@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Iconify from "../../components/iconify";
 import { Animate } from "../../global/styles";
 import { PATH_SOCIAL } from "../../routes/paths";
+import React from "react";
 
 // --------------------------------------------------------------------
 
@@ -17,7 +18,7 @@ export default function Footer() {
         textAlign="center"
         gutterBottom
       >
-        &copy; 2024 Rader. All rights reserved
+        &copy; 2024 VideoFlix. All rights reserved
       </Typography>
 
       <Typography
