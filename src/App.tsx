@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,7 +13,7 @@ import Header from "./layouts/header";
 import Routes from "./routes";
 import theme from "./theme";
 
-// ---------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 function App() {
   register();

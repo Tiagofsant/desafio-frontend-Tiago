@@ -1,4 +1,3 @@
-import React from "react";
 import AuthorDescription from "../../components/authorDescription";
 import CustomDivider from "../../components/customDivider";
 import LabeledBadge from "../../components/labeledBadge";
@@ -9,7 +8,7 @@ import useCelebrityWorks from "../../hooks/useCelebrityWorks";
 import { PATH_IMAGE_API } from "../../routes/paths";
 import { StyledContainer, StyledContent } from "./styles";
 
-// ---------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function ActorPage() {
   const { celebrity, loading, error } = useCelebrity(64);
@@ -20,7 +19,7 @@ export default function ActorPage() {
   if (loading) return <LoadingScreen />;
   if (error) return <div>ERRO AO CARREGAR A PAGINA</div>;
 
-  // -------------------------- CONTEÚDOS ---------------------------------------
+  // -------------------------- CONTEÚDOS --------------------------------------
 
   const authorWorksContent = celebrityWorks.map((item: any) => ({
     title: item.title,
@@ -30,18 +29,18 @@ export default function ActorPage() {
     year: "Desconhecido",
   }));
 
-  // -------------------------- RETORNO -------------------------------------------
+  // -------------------------- RETORNO ----------------------------------------
 
   return (
     <StyledContainer>
-      {/* ---------------------- SEÇÃO 1 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 1 ----------------------------------- */}   
       <StyledContent>
         <LabeledBadge title="Filmes e Séries" />
         <MediaCard content={authorWorksContent.slice(0, 18)} />
         <CustomDivider />
       </StyledContent>
 
-      {/* ---------------------- SEÇÃO 2 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 2 ----------------------------------- */}   
       {celebrity && (
         <AuthorDescription
           authorName={celebrity.name}

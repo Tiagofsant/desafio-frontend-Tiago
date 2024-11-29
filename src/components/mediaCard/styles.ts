@@ -1,7 +1,7 @@
 import { Card, CardMedia, styled } from "@mui/material";
 import { imageProps } from "../../types";
 
-// --------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export const StyledCard = styled(Card)(({ theme }) => ({
   minWidth: "140px",

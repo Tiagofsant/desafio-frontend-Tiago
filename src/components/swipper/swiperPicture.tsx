@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwipperPictureProps } from "../../types";
 import CardPicture from "../cardPicture";
 
-// ------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function SwipperPicture({ itemsPic }: SwipperPictureProps) {
   const [slidesPerView, setSlidesPerView] = useState<number>(6);

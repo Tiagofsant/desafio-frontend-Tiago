@@ -2,8 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getMoviesDetailsById } from "../api/services/requests";
 import { Genre, Movie, MovieContent } from "../types";
 
-// -----------------------------------------------------------------------------------
-
+// -----------------------------------------------------------------------------
 const useMoviesDetais = (id: number) => {
   const [movieDetails, setMovieDetails] = useState<Movie | null>(null);
   const [genres, setGenres] = useState<Genre[]>([]);

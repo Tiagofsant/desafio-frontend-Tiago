@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { getAllMovies } from "../api/services/requests";
 
-// ----------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 const useMovies = () => {
   const [movies, setMovies] = useState<any[]>([]);

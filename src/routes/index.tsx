@@ -1,9 +1,8 @@
-import React from "react";
 import { useRoutes } from "react-router-dom";
 import { Actor, Home, Movies } from "./elements";
 import { PATH_PAGE } from "./paths";
 
-// --------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function Router() {
   const routes = useRoutes([

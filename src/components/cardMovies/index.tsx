@@ -1,5 +1,4 @@
 import { Stack, useTheme } from "@mui/material";
-import React from "react";
 import { CardMoviesProps } from "../../types";
 import ButtonIcon from "../buttonIcon";
 import ScoreBadge from "../scoreBadge";
@@ -12,7 +11,7 @@ import {
   StyledTypographyContainer,
 } from "./styles";
 
-// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function CardMovies({ content }: CardMoviesProps) {
   const theme = useTheme();

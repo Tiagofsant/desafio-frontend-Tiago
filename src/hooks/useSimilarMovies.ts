@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getAllSimilarMovies } from "../api/services/requests";
 
-// ----------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 const useSimilarMovies = () => {
   const [similarMovies, setSimilarMovies] = useState<any[]>([]);

@@ -1,7 +1,7 @@
 import { Stack, styled } from "@mui/material";
 import { ScoreBadgeProps } from "../../types";
 
-// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export const StyledContent = styled(Stack)<ScoreBadgeProps>(({ noBadge }) => ({
   display: "flex",

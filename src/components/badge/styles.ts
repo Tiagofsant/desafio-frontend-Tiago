@@ -1,6 +1,6 @@
 import { Stack, styled, Typography } from "@mui/material";
 
-// --------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export const StyledContent = styled(Stack)(() => ({
   display: "flex",

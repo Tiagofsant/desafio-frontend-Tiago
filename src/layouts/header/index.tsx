@@ -1,11 +1,10 @@
 import { Button } from "@mui/material";
-import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../components/logo";
 import { StyledContentRow } from "../../global/styles";
 import { PATH_PAGE } from "../../routes/paths";
 
-// ---------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function Header() {
   return (

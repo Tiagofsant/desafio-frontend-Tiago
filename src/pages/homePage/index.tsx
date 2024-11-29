@@ -1,5 +1,4 @@
 import { Stack } from "@mui/material";
-import React from "react";
 import CardCover from "../../components/cardCover";
 import CardMovies from "../../components/cardMovies";
 import LabeledBadge from "../../components/labeledBadge";
@@ -24,7 +23,7 @@ export default function HomePage() {
   if (loading) return <LoadingScreen />;
   if (error) return <div>ERRO AO CARREGAR A PAGINA</div>;
 
-  // -------------------------- CONTEÚDOS ---------------------------------------
+  // -------------------------- CONTEÚDOS --------------------------------------
 
   const genresContent = genres.map((item: any) => ({
     key: item.id,
@@ -59,11 +58,10 @@ export default function HomePage() {
       "",
   };
 
-  // -------------------------- RETORNO -------------------------------------------
-
+  // -------------------------- RETORNO ----------------------------------------
   return (
     <Stack>
-      {/* ---------------------- SEÇÃO 1 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 1 ----------------------------------- */}
       <StyledContainerCover>
         <CardCover content={coverContent} />
         <Stack gap={2}>
@@ -72,7 +70,7 @@ export default function HomePage() {
         </Stack>
       </StyledContainerCover>
 
-      {/* ---------------------- SEÇÃO 3 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 3 ----------------------------------- */}
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge title="Ultimos Lançamentos" />
@@ -82,7 +80,7 @@ export default function HomePage() {
         </StyledContent>
       </Stack>
 
-      {/* ---------------------- SEÇÃO 2 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 2 ----------------------------------- */}
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge title="Recomendados" />
@@ -92,7 +90,7 @@ export default function HomePage() {
         </StyledContent>
       </Stack>
 
-      {/* ---------------------- SEÇÃO 3 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 3 ----------------------------------- */}
       <Stack marginTop={2}>
         <Stack>
           <LabeledBadge title="Celebridades" />

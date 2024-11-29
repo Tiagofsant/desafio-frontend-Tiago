@@ -1,5 +1,4 @@
 import { Stack } from "@mui/material";
-import React from "react";
 import ButtonIcon from "../../components/buttonIcon";
 import ContentWrapper from "../../components/contentWrapper";
 import LabeledBadge from "../../components/labeledBadge";
@@ -19,7 +18,7 @@ import {
   StyledContent,
 } from "./styles";
 
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function MoviePage() {
   const { movieDetails, genres, loading, error } = useMoviesDetais(533535);
@@ -30,12 +29,12 @@ export default function MoviePage() {
     ? `${PATH_IMAGE_API.default}w1280/${movieDetails.backdrop_path}`
     : "";
 
-  // ---------------------TRATAMENTO DE ERROS --------------------------------
+  // ---------------------TRATAMENTO DE ERROS ----------------------------------
 
   if (loading) return <LoadingScreen />;
   if (error) return <div>ERRO AO CARREGAR A PAGINA</div>;
 
-  // ------------------------------- CONTEÚDOS  ------------------------------
+  // ------------------------------- CONTEÚDOS  --------------------------------
 
   const similarMoviesContent = similarMovies.map((item: any) => ({
     score: item.vote_average,
@@ -57,11 +56,11 @@ export default function MoviePage() {
       : "",
   }));
 
-  // ------------------------------- RETORNOS --------------------------------
+  // ------------------------------- RETORNOS ----------------------------------
 
   return (
     <Stack gap={2}>
-      {/* ---------------------- SEÇÃO 1 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 1 ----------------------------------- */}
       <StyledCard>
         <StyledCardMedia imageUrl={imageUrl}>
           <StyledCardContent>
@@ -74,7 +73,7 @@ export default function MoviePage() {
 
       <ContentWrapper content={genresContent} />
 
-      {/* ---------------------- SEÇÃO 2 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 2 ----------------------------------- */}
 
       <MovieDetails
         title={movieDetails?.title || ""}
@@ -85,13 +84,13 @@ export default function MoviePage() {
         artists={["Desconhecido"]}
         voteCount={movieDetails?.vote_count || 0}
       />
-      {/* ---------------------- SEÇÃO 3 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 3 ----------------------------------- */}
       <LabeledBadge title="Elenco principal" />
       <StyledContentRow height={280}>
         <SwipperPicture itemsPic={castContent} />
       </StyledContentRow>
 
-      {/* ---------------------- SEÇÃO 4 -------------------------------- */}
+      {/* ---------------------- SEÇÃO 4 ----------------------------------- */}
       <LabeledBadge title="Semelhantes" />
       <StyledContentRow height={280}>
         <SwipperMovie itemsMov={similarMoviesContent} />

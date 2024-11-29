@@ -1,9 +1,8 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import React from "react";
 import { ScoreProps } from "../../types";
 import Iconify from "../iconify";
 
-// ------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function Score({ score }: ScoreProps) {
   const theme = useTheme();

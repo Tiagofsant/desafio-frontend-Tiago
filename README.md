@@ -1,4 +1,4 @@
-# Desafio Front-End Grupo Orquestre
+# Desafio Front-End Pleno
 
 
 <h2>Observações Iniciais</h2>

@@ -1,5 +1,4 @@
 import { Typography, useTheme } from "@mui/material";
-import React from "react";
 import { CardPictureProps } from "../../types";
 import {
   StyledCard,
@@ -8,7 +7,7 @@ import {
   StyledContent,
 } from "./styles";
 
-// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function CardPicture({ content }: CardPictureProps) {
   const theme = useTheme();

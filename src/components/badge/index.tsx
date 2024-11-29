@@ -1,8 +1,7 @@
-import React from "react";
 import Iconify from "../iconify";
 import { StyledContent, StyledTypography } from "./styles";
 
-// ----------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function Badge() {
   return (

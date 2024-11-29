@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getCelebritiesById } from "../api/services/requests";
 import { Celebrity } from "../types";
 
-// ----------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 const useCelebrity = (id: number) => {
   const [celebrity, setCelebrity] = useState<Celebrity>();

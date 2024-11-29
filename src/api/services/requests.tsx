@@ -1,7 +1,7 @@
 import axios from "axios";
 import { TOKEN } from "../server/axios";
 
-// ------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export async function getAllMovies() {
   const options = {

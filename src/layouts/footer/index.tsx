@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import Iconify from "../../components/iconify";
 import { Animate } from "../../global/styles";
 import { PATH_SOCIAL } from "../../routes/paths";
-import React from "react";
 
-// --------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function Footer() {
   const theme = useTheme();

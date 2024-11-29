@@ -1,5 +1,4 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import React from "react";
 import { SmallCircle } from "../../global/styles";
 import { CardCoverProps } from "../../types";
 import Badge from "../badge";
@@ -12,7 +11,7 @@ import {
   StyledContent,
 } from "./styles";
 
-// ------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function CardCover({ content }: CardCoverProps) {
   const theme = useTheme();

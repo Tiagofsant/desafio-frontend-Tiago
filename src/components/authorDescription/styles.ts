@@ -1,7 +1,7 @@
 import { Card, CardMedia, Stack, styled } from "@mui/material";
 import { imageProps } from "../../types";
 
-// ---------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export const StyledCard = styled(Card)(({ theme }) => ({
   width: "100%",

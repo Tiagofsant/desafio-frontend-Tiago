@@ -1,9 +1,8 @@
 import { Stack, Typography, useTheme } from "@mui/material";
-import React from "react";
 import { ContentWrapperProps } from "../../types";
 import { StyledContainer } from "./styles";
 
-// ------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function ContentWrapper({ content }: ContentWrapperProps) {
   const theme = useTheme();

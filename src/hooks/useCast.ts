@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getMovieCastById } from "../api/services/requests";
 
-// ----------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 const useCast = () => {
   const [cast, setCast] = useState<any[]>([]);

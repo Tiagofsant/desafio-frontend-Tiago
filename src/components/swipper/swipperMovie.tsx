@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwipperMovieProps } from "../../types";
 import CardMovies from "../cardMovies";
 
-// ------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function SwipperMovie({ itemsMov }: SwipperMovieProps) {
   const [slidesPerView, setSlidesPerView] = useState<number>(4);
